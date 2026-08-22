@@ -49,16 +49,17 @@
 
     <div class="container">
         <!-- HEADER -->
-        <header>
-            <div class="logo" style="text-align: center; padding: 10px 0;">
-  <img src="logo.png" alt="DigitalScale.ai" loading="eager" style="max-width: 220px; width: 100%; height: auto; display: block; margin: 0 auto;">
-            </div>
-                <button type="button" id="b-en" class="active" onclick="changeLang('en')">EN</button>
-                <button type="button" id="b-ar" onclick="changeLang('ar')">العربية</button>
-                <button type="button" id="b-ur" onclick="changeLang('ur')">اردو</button>
-            </div>
+        <header style="display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 15px 0;">
+  <div class="logo">
+    <img src="logo.png" alt="DigitalScale.ai" loading="eager" style="max-width: 220px; width: 100%; height: auto; display: block; margin: 0 auto;">
+  </div>
+  <div class="lang-btns" role="group" aria-label="Language selection" style="display: flex; gap: 8px;">
+    <button type="button" id="b-en" class="active" onclick="changeLang('en')">EN</button>
+    <button type="button" id="b-ar" onclick="changeLang('ar')">العربية</button>
+    <button type="button" id="b-ur" onclick="changeLang('ur')">اردو</button>
+  </div>
         </header>
-
+        
         <!-- MAIN TITLE -->
         <div style="margin-bottom: 25px;">
             <h1 id="t-title" style="font-size: 24px; margin-bottom: 8px;">Select High-Impact AI & Growth Services</h1>
