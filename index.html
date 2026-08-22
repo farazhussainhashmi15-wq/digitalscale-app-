@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigitalScale.ai | Fix Version</title>
+    <title>DigitalScale.ai | All Services</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: sans-serif; }
         body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.5; }
@@ -16,7 +16,7 @@
         .card { background: #111827; border: 1px solid #1f2937; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
         .service-item { display: flex; justify-content: space-between; align-items: center; padding: 12px; background: #0b0f19; border: 1px solid #1f2937; border-radius: 8px; margin-bottom: 10px; cursor: pointer; }
         .service-item:hover { border-color: #10b981; }
-        .price { color: #10b981; font-weight: bold; }
+        .price { color: #10b981; font-weight: bold; font-size: 14px; }
         input[type="checkbox"] { width: 18px; height: 18px; accent-color: #10b981; cursor: pointer; }
         input[type="range"] { width: 100%; height: 8px; background: #374151; border-radius: 5px; outline: none; accent-color: #10b981; margin: 15px 0; }
         .btn-wa { background: #10b981; color: #030712; border: none; padding: 12px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 15px; margin-top: 15px; }
@@ -42,12 +42,13 @@
 
         <!-- MAIN TITLE -->
         <div style="margin-bottom: 25px;">
-            <h1 id="t-title" style="font-size: 24px; margin-bottom: 8px;">Select High-Impact Growth Services</h1>
+            <h1 id="t-title" style="font-size: 24px; margin-bottom: 8px;">Select High-Impact AI & Growth Services</h1>
             <p id="t-sub" style="color: #9ca3af; font-size: 14px;">Select services below to calculate your custom package total.</p>
         </div>
 
-        <!-- SERVICES -->
+        <!-- 8 SERVICES -->
         <div class="card">
+            
             <div class="service-item" onclick="toggleCheck('c1')">
                 <div style="display: flex; align-items: center; gap: 10px;">
                     <input type="checkbox" id="c1" class="srv" value="450" data-en="AI Workflow & n8n Automation" data-ar="أتمتة أعمال الذكاء الاصطناعي n8n" data-ur="اے آئی ورک فلو اور n8n آٹومیشن" onclick="event.stopPropagation(); updateSummary();">
@@ -71,6 +72,47 @@
                 </div>
                 <span class="price">+$300</span>
             </div>
+
+            <div class="service-item" onclick="toggleCheck('c4')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="c4" class="srv" value="250" data-en="CRO & Web Funnel Optimization" data-ar="تحسين معدل التحويل للمتاجر والمواقع" data-ur="کنورژن ریٹ (CRO) اور سیلز فنل" onclick="event.stopPropagation(); updateSummary();">
+                    <span id="s4">CRO & Web Funnel Optimization</span>
+                </div>
+                <span class="price">+$250</span>
+            </div>
+
+            <div class="service-item" onclick="toggleCheck('c5')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="c5" class="srv" value="200" data-en="Google Map Local Pack Ranking" data-ar="تصدر خرائط جوجل والظهور المحلي" data-ur="گوگل میپس ٹاپ رینکنگ (Local Pack)" onclick="event.stopPropagation(); updateSummary();">
+                    <span id="s5">Google Map Local Pack Ranking</span>
+                </div>
+                <span class="price">+$200</span>
+            </div>
+
+            <div class="service-item" onclick="toggleCheck('c6')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="c6" class="srv" value="500" data-en="High-Converting Web Architecture" data-ar="تطوير مواقع وبنية تحتية متكاملة" data-ur="فل اسٹیک ہائی کنورٹنگ ویب سائٹ" onclick="event.stopPropagation(); updateSummary();">
+                    <span id="s6">High-Converting Web Architecture</span>
+                </div>
+                <span class="price">+$500</span>
+            </div>
+
+            <div class="service-item" onclick="toggleCheck('c7')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="c7" class="srv" value="250" data-en="Meta & Snapchat Targeted Ads" data-ar="إعلانات ممتازة سناب وسناب شات" data-ur="میٹا اور سنیپ چیٹ ٹارگٹڈ ایڈز" onclick="event.stopPropagation(); updateSummary();">
+                    <span id="s7">Meta & Snapchat Targeted Ads</span>
+                </div>
+                <span class="price">+$250</span>
+            </div>
+
+            <div class="service-item" onclick="toggleCheck('c8')">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <input type="checkbox" id="c8" class="srv" value="200" data-en="AI Short Video & Reel Design" data-ar="صناعة فيديوهات بالذكاء الاصطناعي" data-ur="اے آئی شارٹس اور رییلز ڈیزائن" onclick="event.stopPropagation(); updateSummary();">
+                    <span id="s8">AI Short Video & Reel Design</span>
+                </div>
+                <span class="price">+$200</span>
+            </div>
+
         </div>
 
         <!-- USER INPUTS -->
@@ -123,11 +165,16 @@
         const dictionary = {
             en: {
                 dir: 'ltr',
-                title: 'Select High-Impact Growth Services',
+                title: 'Select High-Impact AI & Growth Services',
                 sub: 'Select services below to calculate your custom package total.',
                 s1: 'AI Workflow & n8n Automation',
                 s2: 'Programmatic SEO & GEO Search',
                 s3: 'WhatsApp Business API Funnel',
+                s4: 'CRO & Web Funnel Optimization',
+                s5: 'Google Map Local Pack Ranking',
+                s6: 'High-Converting Web Architecture',
+                s7: 'Meta & Snapchat Targeted Ads',
+                s8: 'AI Short Video & Reel Design',
                 lname: 'Your Name',
                 lbiz: 'Business Name',
                 sumTitle: 'Selected Package Summary',
@@ -142,11 +189,16 @@
             },
             ar: {
                 dir: 'rtl',
-                title: 'اختر خدمات النمو والتطوير الرقمي',
+                title: 'اختر خدمات الذكاء الاصطناعي والنمو الرقمي',
                 sub: 'حدد الخدمات أدناه لحساب التكلفة الإجمالية لحزمتك الخاصة.',
                 s1: 'أتمتة أعمال الذكاء الاصطناعي n8n',
                 s2: 'تحسين محركات البحث البرمجي وGEO',
                 s3: 'ربط واتساب برامجي وفنل مبيعات',
+                s4: 'تحسين معدل التحويل للمتاجر والمواقع',
+                s5: 'تصدر خرائط جوجل والظهور المحلي',
+                s6: 'تطوير مواقع وبنية تحتية متكاملة',
+                s7: 'إعلانات ممتازة سناب وسناب شات',
+                s8: 'صناعة فيديوهات بالذكاء الاصطناعي',
                 lname: 'الاسم الكريم',
                 lbiz: 'اسم الشركة / النشاط',
                 sumTitle: 'ملخص الحزمة المختارة',
@@ -161,11 +213,16 @@
             },
             ur: {
                 dir: 'rtl',
-                title: 'اپنی پسندیدہ گروتھ سروسز منتخب کریں',
+                title: 'اپنی پسندیدہ اے آئی اور گروتھ سروسز منتخب کریں',
                 sub: 'اپنا کسٹم پیکیج بنانے کے لیے نیچے دی گئی سروسز پر کلک کریں۔',
                 s1: 'اے آئی ورک فلو اور n8n آٹومیشن',
                 s2: 'پروگرامیٹک SEO اور AI سرچ رینکنگ',
                 s3: 'واٹس ایپ Business API اور سیلز فنل',
+                s4: 'کنورژن ریٹ (CRO) اور سیلز فنل',
+                s5: 'گوگل میپس ٹاپ رینکنگ (Local Pack)',
+                s6: 'فل اسٹیک ہائی کنورٹنگ ویب سائٹ',
+                s7: 'میٹا اور سنیپ چیٹ ٹارگٹڈ ایڈز',
+                s8: 'اے آئی شارٹس اور رییلز ڈیزائن',
                 lname: 'آپ کا نام',
                 lbiz: 'کاروبار یا برانڈ کا نام',
                 sumTitle: 'منتخب کردہ پیکیج کا خلاصہ',
@@ -191,7 +248,7 @@
             let html = '';
             const checkboxes = document.querySelectorAll('.srv');
             
-            checkboxes.forEach(cb => {
+            checkboxes.forEach((cb, index) => {
                 if(cb.checked) {
                     const price = parseInt(cb.value);
                     const title = cb.getAttribute('data-' + currentLang) || cb.getAttribute('data-en');
@@ -218,9 +275,15 @@
 
             document.getElementById('t-title').innerText = t.title;
             document.getElementById('t-sub').innerText = t.sub;
-            document.getElementById('s1').innerText = t.s1;
-            document.getElementById('s2').innerText = t.s2;
-            document.getElementById('s3').innerText = t.s3;
+            
+            for(let i=1; i<=8; i++) {
+                const sElem = document.getElementById('s' + i);
+                const cbElem = document.getElementById('c' + i);
+                if(sElem && cbElem) {
+                    sElem.innerText = cbElem.getAttribute('data-' + lang);
+                }
+            }
+
             document.getElementById('l-name').innerText = t.lname;
             document.getElementById('l-biz').innerText = t.lbiz;
             document.getElementById('t-sum').innerText = t.sumTitle;
