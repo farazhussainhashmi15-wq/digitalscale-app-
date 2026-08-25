@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Workflow Automation & Ads ROI Calculator | DigitalScale.ai</title>
-    <meta property="og:title" content="AI Workflow Automation & Ads ROI Calculator | DigitalScale.ai">
-    <meta property="og:description" content="Get custom AI workflows, n8n automation, programmatic SEO, and calculate your ad spend return on investment (ROAS) instantly.">
+    <title>DigitalScale.ai | Free Ads ROAS & ROI Calculators</title>
+    <meta name="description" content="Instantly calculate your Return on Ad Spend for Facebook, Instagram, TikTok, Snapchat, Google Ads, and WhatsApp marketing campaigns. Free interactive tools.">
+    <meta property="og:title" content="DigitalScale.ai | Free Ads ROAS Calculators">
+    <meta property="og:description" content="Free interactive ROAS and ROI calculators for major advertising and messaging platforms.">
     <meta property="og:image" content="https://digitalscale-app.vercel.app/logo.png">
-    <meta property="og:url" content="https://digitalscale-app.vercel.app">
+    <meta property="og:url" content="https://digitalscale-app.vercel.app/">
     <meta property="og:type" content="website">
+    <link rel="canonical" href="https://digitalscale-app.vercel.app/">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY3JBDDWFX"></script>
     <script>
@@ -17,329 +19,121 @@
       gtag('js', new Date());
       gtag('config', 'G-JY3JBDDWFX');
     </script>
-    <meta name="google-site-verification" content="D3oBkvWhZt4T-EAyDuBK9mS6lyf30gQKd8LlKB_NmY8" />
-    <meta name="description" content="Get custom AI workflows, n8n business automation, programmatic SEO, local lead generation, and use our advanced Ads ROI and ROAS calculator.">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
-        body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.6; }
+        body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
         .container { max-width: 900px; margin: 0 auto; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #1f2937; margin-bottom: 30px; gap: 15px; }
-        .logo img { max-height: 65px; width: auto; object-fit: contain; display: block; }
-        .lang-btns { display: flex; gap: 8px; }
-        .lang-btns button { background: #111827; border: 1px solid #374151; color: #d1d5db; padding: 6px 12px; cursor: pointer; border-radius: 6px; font-weight: bold; }
-        .lang-btns button.active { background: #10b981; color: #030712; border-color: #10b981; }
-        .card { background: #111827; border: 1px solid #1f2937; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
-        .service-item { display: flex; justify-content: space-between; align-items: center; padding: 14px; background: #0b0f19; border: 1px solid #1f2937; border-radius: 8px; margin-bottom: 10px; cursor: pointer; }
-        .service-item:hover { border-color: #10b981; }
-        .price { color: #34d399; font-weight: bold; font-size: 14px; }
-        input[type="checkbox"] { width: 20px; height: 20px; accent-color: #10b981; cursor: pointer; }
-        input[type="range"] { width: 100%; height: 8px; background: #374151; border-radius: 5px; outline: none; accent-color: #10b981; margin: 15px 0; }
-        .btn-wa { background: #10b981; color: #030712; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 15px; }
-        .btn-wa:hover { background: #059669; color: #fff; }
-        .flex-row { display: flex; gap: 15px; flex-wrap: wrap; }
-        .flex-col { flex: 1; min-width: 250px; }
-        label { font-size: 13px; color: #d1d5db; display: block; margin-bottom: 5px; }
-        input[type="text"] { width: 100%; padding: 12px; background: #030712; border: 1px solid #374151; color: #fff; border-radius: 6px; }
-        input[type="text"]:focus { border-color: #10b981; outline: none; }
-        .summary-box { background: #030712; padding: 15px; border-radius: 8px; border: 1px solid #1f2937; min-height: 80px; margin-bottom: 15px; font-size: 14px; color: #d1d5db; }
-        .tool-link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 15px; }
-        .tool-btn { background: #0b0f19; border: 1px solid #374151; padding: 12px 15px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s; }
-        .tool-btn:hover { border-color: #10b981; background: #111827; color: #34d399; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #1f2937; margin-bottom: 30px; }
+        .logo img { max-height: 55px; width: auto; object-fit: contain; display: block; }
+        .lang-switch { display: flex; gap: 8px; }
+        .lang-switch a { background: #111827; border: 1px solid #374151; color: #d1d5db; padding: 6px 12px; border-radius: 6px; font-size: 13px; text-decoration: none; transition: all 0.2s; }
+        .lang-switch a:hover { border-color: #10b981; color: #10b981; }
+        h1 { font-size: 28px; margin-bottom: 10px; color: #fff; text-align: center; }
+        .subtitle { color: #9ca3af; font-size: 16px; margin-bottom: 35px; text-align: center; }
+        
+        .tools-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 40px; }
+        .tool-card { background: #111827; border: 1px solid #1f2937; padding: 20px 24px; border-radius: 12px; text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease; }
+        .tool-card:hover { border-color: #10b981; transform: translateY(-2px); background: #1f2937; }
+        .tool-info { display: flex; align-items: center; gap: 16px; }
+        .tool-icon { font-size: 32px; line-height: 1; }
+        .tool-title { font-size: 17px; color: #fff; font-weight: 600; margin-bottom: 3px; }
+        .tool-desc { font-size: 13px; color: #9ca3af; }
+        .arrow-badge { background: #030712; color: #10b981; border: 1px solid #1f2937; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+        
+        footer { text-align: center; color: #6b7280; font-size: 13px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1f2937; }
+        footer a { color: #10b981; text-decoration: none; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- HEADER -->
         <header>
             <div class="logo">
-                <img src="logo.png" alt="DigitalScale.ai" loading="eager">
+                <a href="/"><img src="logo.png" alt="DigitalScale.ai" loading="eager"></a>
             </div>
-            <div class="lang-btns" role="group" aria-label="Language selection">
-                <button type="button" id="b-en" class="active" onclick="changeLang('en')">EN</button>
-                <button type="button" id="b-ar" onclick="changeLang('ar')">العربية</button>
-                <button type="button" id="b-ur" onclick="changeLang('ur')">اردو</button>
+            <div class="lang-switch">
+                <a href="/">EN</a>
+                <a href="/ar">العربية</a>
+                <a href="/ur">اردو</a>
             </div>
         </header>
-        
-        <!-- MAIN TITLE -->
-        <div style="margin-bottom: 25px;">
-            <h1 id="t-title" style="font-size: 24px; margin-bottom: 8px;">AI Workflow Automation & Growth Services</h1>
-            <p id="t-sub" style="color: #9ca3af; font-size: 14px;">Select high-impact services below to calculate your custom package total and business growth strategy.</p>
+
+        <h1>🚀 Free Ads ROAS & Growth Calculators</h1>
+        <p class="subtitle">Select your platform below to instantly calculate campaign return on ad spend (ROAS) and marketing ROI.</p>
+
+        <!-- ALL PLATFORM CALCULATORS GRID -->
+        <div class="tools-grid">
+            <a href="tools/facebook-ads-roas-calculator.html" class="tool-card">
+                <div class="tool-info">
+                    <div class="tool-icon">📘</div>
+                    <div>
+                        <div class="tool-title">Facebook Ads ROAS Calculator</div>
+                        <div class="tool-desc">Calculate return and revenue for Facebook ad campaigns.</div>
+                    </div>
+                </div>
+                <div class="arrow-badge">→</div>
+            </a>
+
+            <a href="tools/instagram-ads-roas-calculator.html" class="tool-card">
+                <div class="tool-info">
+                    <div class="tool-icon">📸</div>
+                    <div>
+                        <div class="tool-title">Instagram Ads ROAS Calculator</div>
+                        <div class="tool-desc">Estimate ROI for Instagram Reels, Stories, and feed ads.</div>
+                    </div>
+                </div>
+                <div class="arrow-badge">→</div>
+            </a>
+
+            <a href="tools/tiktok-ads-roas-calculator.html" class="tool-card">
+                <div class="tool-info">
+                    <div class="tool-icon">🎵</div>
+                    <div>
+                        <div class="tool-title">TikTok Ads ROAS Calculator</div>
+                        <div class="tool-desc">Calculate short-form video performance and viral ad returns.</div>
+                    </div>
+                </div>
+                <div class="arrow-badge">→</div>
+            </a>
+
+            <a href="tools/snapchat-ads-roas-calculator.html" class="tool-card">
+                <div class="tool-info">
+                    <div class="tool-icon">👻</div>
+                    <div>
+                        <div class="tool-title">Snapchat Ads ROAS Calculator</div>
+                        <div class="tool-desc">Evaluate mobile engagement and snap campaign returns.</div>
+                    </div>
+                </div>
+                <div class="arrow-badge">→</div>
+            </a>
+
+            <a href="tools/google-ads-roas-calculator.html" class="tool-card">
+                <div class="tool-info">
+                    <div class="tool-icon">📈</div>
+                    <div>
+                        <div class="tool-title">Google Ads ROAS Calculator</div>
+                        <div class="tool-desc">Estimate returns for Google Search, Shopping, and PMax.</div>
+                    </div>
+                </div>
+                <div class="arrow-badge">→</div>
+            </a>
+
+            <a href="tools/whatsapp-marketing-roi-calculator.html" class="tool-card">
+                <div class="tool-info">
+                    <div class="tool-icon">💚</div>
+                    <div>
+                        <div class="tool-title">WhatsApp Marketing ROI Calculator</div>
+                        <div class="tool-desc">Calculate leads, conversions, and sales revenue from WhatsApp funnels.</div>
+                    </div>
+                </div>
+                <div class="arrow-badge">→</div>
+            </a>
         </div>
 
-        <!-- 8 SERVICES -->
-        <div class="card">
-            <div class="service-item" onclick="toggleCheck('c1')">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <input type="checkbox" id="c1" class="srv" value="450" aria-label="AI Workflow & n8n Automation Services" data-en="AI Workflow & n8n Automation Services" data-ar="خدمات أتمتة أعمال الذكاء الاصطناعي n8n" data-ur="اے آئی ورک فلو اور n8n آٹومیشن سروسز" onclick="event.stopPropagation(); updateSummary();">
-                    <span id="s1">AI Workflow & n8n Automation Services</span>
-                </div>
-                <span class="price">+$450</span>
-            </div>
-
-            <div class="service-item" onclick="toggleCheck('c2')">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <input type="checkbox" id="c2" class="srv" value="350" aria-label="Programmatic SEO & GEO Search Ranking" data-en="Programmatic SEO & GEO Search Ranking" data-ar="تحسين محركات البحث البرمجي وGEO" data-ur="پروگرامیٹک SEO اور AI سرچ رینکنگ" onclick="event.stopPropagation(); updateSummary();">
-                    <span id="s2">Programmatic SEO & GEO Search Ranking</span>
-                </div>
-                <span class="price">+$350</span>
-            </div>
-
-            <div class="service-item" onclick="toggleCheck('c3')">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <input type="checkbox" id="c3" class="srv" value="300" aria-label="WhatsApp Business API Sales Funnel" data-en="WhatsApp Business API Sales Funnel" data-ar="ربط واتساب برامجي وفنل مبيعات" data-ur="واٹس ایپ Business API اور سیلز فنل" onclick="event.stopPropagation(); updateSummary();">
-                    <span id="s3">WhatsApp Business API Sales Funnel</span>
-                </div>
-                <span class="price">+$300</span>
-            </div>
-
-            <div class="service-item" onclick="toggleCheck('c4')">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <input type="checkbox" id="c4" class="srv" value="250" aria-label="CRO & Web Funnel Optimization Agency" data-en="CRO & Web Funnel Optimization Agency" data-ar="تحسين معدل التحويل للمتاجر والمواقع" data-ur="کنورژن ریٹ (CRO) اور سیلز فنل آپٹمائزیشن" onclick="event.stopPropagation(); updateSummary();">
-                    <span id="s4">CRO & Web Funnel Optimization Agency</span>
-                </div>
-                <span class="price">+$250</span>
-            </div>
-
-            <div class="service-item" onclick="toggleCheck('c5')">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <input type="checkbox" id="c5" class="srv" value="200" aria-label="Google Map Local Pack Ranking Expert" data-en="Google Map Local Pack Ranking Expert" data-ar="تصدر خرائط جوجل والظهور المحلي" data-ur="گوگل میپس لوکل پیک ٹاپ رینکنگ" onclick="event.stopPropagation(); updateSummary();">
-                    <span id="s5">Google Map Local Pack Ranking Expert</span>
-                </div>
-                <span class="price">+$200</span>
-            </div>
-
-            <div class="service-item" onclick="toggleCheck('c6')">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <input type="checkbox" id="c6" class="srv" value="500" aria-label="High-Converting Web Architecture" data-en="High-Converting Web Architecture" data-ar="تطوير مواقع وبنية تحتية متكاملة" data-ur="فل اسٹیک ہائی کنورٹنگ ویب سائٹ ڈویلپمنٹ" onclick="event.stopPropagation(); updateSummary();">
-                    <span id="s6">High-Converting Web Architecture</span>
-                </div>
-                <span class="price">+$500</span>
-            </div>
-
-            <div class="service-item" onclick="toggleCheck('c7')">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <input type="checkbox" id="c7" class="srv" value="250" aria-label="Meta & Snapchat Targeted Paid Ads" data-en="Meta & Snapchat Targeted Paid Ads" data-ar="إعلانات ممتازة سناب وسناب شات" data-ur="میٹا اور سنیپ چیٹ ٹارگٹڈ پیڈ ایڈز" onclick="event.stopPropagation(); updateSummary();">
-                    <span id="s7">Meta & Snapchat Targeted Paid Ads</span>
-                </div>
-                <span class="price">+$250</span>
-            </div>
-
-            <div class="service-item" onclick="toggleCheck('c8')">
-                <div style="display: flex; align-items: center; gap: 12px;">
-                    <input type="checkbox" id="c8" class="srv" value="200" aria-label="AI Short Video & Reel Design Agency" data-en="AI Short Video & Reel Design Agency" data-ar="صناعة فيديوهات بالذكاء الاصطناعي" data-ur="اے آئی شارٹس اور رییلز ڈیزائن ایجنسی" onclick="event.stopPropagation(); updateSummary();">
-                    <span id="s8">AI Short Video & Reel Design Agency</span>
-                </div>
-                <span class="price">+$200</span>
-            </div>
-        </div>
-
-        <!-- USER INPUTS -->
-        <div class="card">
-            <div class="flex-row">
-                <div class="flex-col">
-                    <label id="l-name" for="in-name">Your Name</label>
-                    <input type="text" id="in-name" placeholder="Enter name...">
-                </div>
-                <div class="flex-col">
-                    <label id="l-biz" for="in-biz">Business Name</label>
-                    <input type="text" id="in-biz" placeholder="Enter business...">
-                </div>
-            </div>
-        </div>
-
-        <!-- SUMMARY & TOTAL -->
-        <div class="card" style="border-color: #10b981;">
-            <h3 id="t-sum" style="margin-bottom: 10px; font-size: 16px;">Selected Package Summary</h3>
-            <div id="sum-content" class="summary-box">No services selected</div>
-            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 18px; font-weight: bold;">
-                <span id="t-tot">Total Estimated:</span>
-                <span id="tot-price" style="color: #10b981; font-size: 22px;">$0</span>
-            </div>
-            <button type="button" class="btn-wa" onclick="sendWhatsApp()">Get Proposal via WhatsApp</button>
-        </div>
-
-        <!-- ROI CALCULATOR -->
-        <div class="card" style="background: linear-gradient(to right, #111827, #064e3b);">
-            <h2 id="t-roi-title" style="font-size: 20px; margin-bottom: 5px;">Ads ROI & ROAS Calculator</h2>
-            <p id="t-roi-sub" style="color: #9ca3af; font-size: 13px; margin-bottom: 15px;">Calculate your expected return on ad spend (ROAS) and marketing campaign revenue instantly.</p>
-            
-            <label id="l-spend" for="r-spend">Monthly Ad Budget: <span id="v-spend" style="color: #10b981; font-weight: bold;">$1,000</span></label>
-            <input type="range" id="r-spend" min="200" max="10000" step="100" value="1000" aria-label="Monthly Ad Budget" oninput="calcRoi()">
-
-            <label id="l-roas" for="r-roas">Expected ROAS: <span id="v-roas" style="color: #34d399; font-weight: bold;">3.5x</span></label>
-            <input type="range" id="r-roas" min="1.5" max="8.0" step="0.5" value="3.5" aria-label="Expected ROAS" oninput="calcRoi()">
-
-            <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #1f2937; display: flex; justify-content: space-between; font-weight: bold;">
-                <span id="t-rev">Estimated Campaign Revenue:</span>
-                <span id="v-rev" style="color: #10b981; font-size: 20px;">$3,500</span>
-            </div>
-
-            <!-- STANDALONE TOOLS INTERNAL LINKS (SEO Internal Linking) -->
-            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #1f2937;">
-                <p style="font-size: 13px; color: #9ca3af; margin-bottom: 10px; font-weight: 600;">Dedicated Platform Calculators:</p>
-                <div class="tool-link-grid">
-                    <a href="/tools/facebook-ads-roas-calculator.html" class="tool-btn"><span>Facebook Ads ROAS</span> <span>→</span></a>
-                    <a href="/tools/snapchat-ads-roas-calculator.html" class="tool-btn"><span>Snapchat Ads ROAS</span> <span>→</span></a>
-                    <a href="/tools/google-ads-roas-calculator.html" class="tool-btn"><span>Google Ads ROAS</span> <span>→</span></a>
-                </div>
-            </div>
-        </div>
+        <footer>
+            <p>&copy; 2026 DigitalScale.ai — All rights reserved.</p>
+        </footer>
     </div>
 
-    <script>
-        const PHONE = "966571957376";
-        let currentLang = 'en';
-
-        const dictionary = {
-            en: {
-                dir: 'ltr',
-                title: 'AI Workflow Automation & Growth Services',
-                sub: 'Select high-impact services below to calculate your custom package total and business growth strategy.',
-                lname: 'Your Name',
-                lbiz: 'Business Name',
-                sumTitle: 'Selected Package Summary',
-                totLabel: 'Total Estimated:',
-                btnText: 'Get Proposal via WhatsApp',
-                emptyText: 'No services selected',
-                roiTitle: 'Ads ROI & ROAS Calculator',
-                roiSub: 'Calculate your expected return on ad spend (ROAS) and marketing campaign revenue instantly.',
-                spendLabel: 'Monthly Ad Budget: ',
-                roasLabel: 'Expected ROAS: ',
-                revLabel: 'Estimated Campaign Revenue:'
-            },
-            ar: {
-                dir: 'rtl',
-                title: 'خدمات أتمتة الذكاء الاصطناعي والنمو الرقمي',
-                sub: 'اختر الخدمات ذات التأثير العالي أدناه لحساب التكلفة الإجمالية واستراتيجية نمو عملك.',
-                lname: 'الاسم الكريم',
-                lbiz: 'اسم الشركة / النشاط',
-                sumTitle: 'ملخص الحزمة المختارة',
-                totLabel: 'المبلغ الإجمالي التقديري:',
-                btnText: 'احصل على العرض عبر الواتساب',
-                emptyText: 'لم يتم اختيار أي خدمة',
-                roiTitle: 'حاسبة عائد الإعلانات (ROI & ROAS)',
-                roiSub: 'احسب العائد المتوقع على الإنفاق الإعلاني وإيرادات الحملات فوراً.',
-                spendLabel: 'ميزانية الإعلانات الشهرية: ',
-                roasLabel: 'مضاعف العائد المتوقع: ',
-                revLabel: 'إيرادات الحملة التقديرية:'
-            },
-            ur: {
-                dir: 'rtl',
-                title: 'اے آئی ورک فلو آٹومیشن اور بزنس گروتھ سروسز',
-                sub: 'اپنا کسٹم پیکیج بنانے اور کاروبار کو بڑھانے کے لیے نیچے دی گئی سروسز منتخب کریں۔',
-                lname: 'آپ کا نام',
-                lbiz: 'کاروبار یا برانڈ کا نام',
-                sumTitle: 'منتخب کردہ پیکیج کا خلاصہ',
-                totLabel: 'کل تخمینی رقم:',
-                btnText: 'واٹس ایپ پر پروپوزل حاصل کریں',
-                emptyText: 'کوئی سروس منتخب نہیں کی گئی',
-                roiTitle: 'ایڈز ROI اور ROAS کیلکولیٹر',
-                roiSub: 'اپنی مارکیٹنگ کیمپین کا متوقع منافع اور ROAS فوراً چیک کریں۔',
-                spendLabel: 'ماہانہ ایڈ بجٹ: ',
-                roasLabel: 'متوقع ریٹرن (ROAS): ',
-                revLabel: 'متوقع کل آمدنی (Revenue):'
-            }
-        };
-
-        function toggleCheck(id) {
-            const cb = document.getElementById(id);
-            cb.checked = !cb.checked;
-            updateSummary();
-        }
-
-        function updateSummary() {
-            let total = 0;
-            let html = '';
-            const checkboxes = document.querySelectorAll('.srv');
-            
-            checkboxes.forEach(cb => {
-                if(cb.checked) {
-                    const price = parseInt(cb.value);
-                    const title = cb.getAttribute('data-' + currentLang) || cb.getAttribute('data-en');
-                    total += price;
-                    html += '<div style="display:flex; justify-content:space-between; margin-bottom:5px;"><span>- ' + title + '</span><span style="color:#34d399; font-weight:bold;">+$' + price + '</span></div>';
-                }
-            });
-
-            const box = document.getElementById('sum-content');
-            if(html === '') {
-                box.innerHTML = dictionary[currentLang].emptyText;
-            } else {
-                box.innerHTML = html;
-            }
-            document.getElementById('tot-price').innerText = '$' + total;
-        }
-
-        function changeLang(lang) {
-            currentLang = lang;
-            const t = dictionary[lang];
-
-            document.documentElement.setAttribute('dir', t.dir);
-            document.documentElement.setAttribute('lang', lang);
-
-            document.getElementById('t-title').innerText = t.title;
-            document.getElementById('t-sub').innerText = t.sub;
-            
-            for(let i=1; i<=8; i++) {
-                const sElem = document.getElementById('s' + i);
-                const cbElem = document.getElementById('c' + i);
-                if(sElem && cbElem) {
-                    const translatedText = cbElem.getAttribute('data-' + lang);
-                    sElem.innerText = translatedText;
-                    cbElem.setAttribute('aria-label', translatedText);
-                }
-            }
-
-            document.getElementById('l-name').innerText = t.lname;
-            document.getElementById('l-biz').innerText = t.lbiz;
-            document.getElementById('t-sum').innerText = t.sumTitle;
-            document.getElementById('t-tot').innerText = t.totLabel;
-            document.querySelector('.btn-wa').innerText = t.btnText;
-
-            document.getElementById('t-roi-title').innerText = t.roiTitle;
-            document.getElementById('t-roi-sub').innerText = t.roiSub;
-            document.getElementById('t-rev').innerText = t.revLabel;
-
-            ['en', 'ar', 'ur'].forEach(l => {
-                const btn = document.getElementById('b-' + l);
-                if(l === lang) {
-                    btn.className = 'active';
-                } else {
-                    btn.className = '';
-                }
-            });
-
-            updateSummary();
-            calcRoi();
-        }
-
-        function calcRoi() {
-            const spend = parseFloat(document.getElementById('r-spend').value);
-            const roas = parseFloat(document.getElementById('r-roas').value);
-            const rev = Math.round(spend * roas);
-
-            document.getElementById('v-spend').innerText = '$' + spend.toLocaleString();
-            document.getElementById('v-roas').innerText = roas.toFixed(1) + 'x';
-            document.getElementById('v-rev').innerText = '$' + rev.toLocaleString();
-        }
-
-        function sendWhatsApp() {
-            const name = document.getElementById('in-name').value.trim() || 'N/A';
-            const biz = document.getElementById('in-biz').value.trim() || 'N/A';
-            const total = document.getElementById('tot-price').innerText;
-
-            let items = '';
-            document.querySelectorAll('.srv').forEach(cb => {
-                if(cb.checked) {
-                    items += '• ' + (cb.getAttribute('data-' + currentLang) || cb.getAttribute('data-en')) + '\n';
-                }
-            });
-
-            let msg = "السلام عليكم!\n\n*Selected Services:*\n" + (items ? items : "None") + "\n*Total:* " + total + "\n\nName: " + name + "\nBusiness: " + biz;
-            window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank');
-        }
-    </script>
 </body>
 </html>
