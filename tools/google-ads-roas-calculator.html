@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Ads ROAS Calculator | DigitalScale.ai</title>
+    <meta name="description" content="Calculate your Google Ads return on ad spend (ROAS) and campaign revenue instantly with our free online calculator.">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY3JBDDWFX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JY3JBDDWFX');
+    </script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #1f2937; margin-bottom: 30px; }
+        .logo img { max-height: 55px; width: auto; object-fit: contain; display: block; }
+        .back-link { color: #10b981; text-decoration: none; font-size: 14px; font-weight: 600; }
+        .back-link:hover { text-decoration: underline; }
+        .card { background: #111827; border: 1px solid #1f2937; padding: 25px; border-radius: 12px; margin-bottom: 20px; background: linear-gradient(to right, #111827, #064e3b); }
+        input[type="range"] { width: 100%; height: 8px; background: #374151; border-radius: 5px; outline: none; accent-color: #10b981; margin: 15px 0; }
+        label { font-size: 14px; color: #d1d5db; display: block; margin-bottom: 5px; }
+        .btn-wa { background: #10b981; color: #030712; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 20px; text-align: center; display: block; text-decoration: none; }
+        .btn-wa:hover { background: #059669; color: #fff; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/"><img src="../logo.png" alt="DigitalScale.ai"></a>
+            </div>
+            <a href="/" class="back-link">← Back to Home</a>
+        </header>
+
+        <div class="card">
+            <h1 style="font-size: 24px; margin-bottom: 8px;">Google Ads ROAS Calculator</h1>
+            <p style="color: #9ca3af; font-size: 14px; margin-bottom: 20px;">Estimate your search campaign performance, conversion value, and return on ad spend.</p>
+            
+            <label for="r-spend">Monthly Google Ads Budget: <span id="v-spend" style="color: #10b981; font-weight: bold;">$2,000</span></label>
+            <input type="range" id="r-spend" min="500" max="20000" step="500" value="2000" oninput="calcRoi()">
+
+            <label for="r-roas" style="margin-top: 20px;">Expected Google Ads ROAS: <span id="v-roas" style="color: #34d399; font-weight: bold;">4.0x</span></label>
+            <input type="range" id="r-roas" min="1.5" max="10.0" step="0.5" value="4.0" oninput="calcRoi()">
+
+            <div style="margin-top: 25px; padding-top: 20px; border-top: 1px solid #1f2937; display: flex; justify-content: space-between; font-weight: bold; align-items: center;">
+                <span>Estimated Monthly Revenue:</span>
+                <span id="v-rev" style="color: #10b981; font-size: 24px;">$8,000</span>
+            </div>
+
+            <a href="#" id="wa-btn" class="btn-wa" onclick="sendWhatsApp(event)">Get Google Ads Strategy via WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        const PHONE = "966571957376";
+
+        function calcRoi() {
+            const spend = parseFloat(document.getElementById('r-spend').value);
+            const roas = parseFloat(document.getElementById('r-roas').value);
+            const rev = Math.round(spend * roas);
+
+            document.getElementById('v-spend').innerText = '$' + spend.toLocaleString();
+            document.getElementById('v-roas').innerText = roas.toFixed(1) + 'x';
+            document.getElementById('v-rev').innerText = '$' + rev.toLocaleString();
+        }
+
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const spend = document.getElementById('v-spend').innerText;
+            const roas = document.getElementById('v-roas').innerText;
+            const rev = document.getElementById('v-rev').innerText;
+
+            let msg = "السلام عليكم!\n\n*Google Ads Calculator Inquiry:*\n- Budget: " + spend + "\n- Expected ROAS: " + roas + "\n- Est. Revenue: " + rev;
+            window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank');
+        }
+    </script>
+</body>
+</html>
