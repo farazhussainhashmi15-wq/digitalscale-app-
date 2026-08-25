@@ -55,18 +55,6 @@
     }
     </script>
 
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "Facebook Ads ROAS Calculator",
-      "applicationCategory": "BusinessApplication",
-      "operatingSystem": "Any",
-      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "description": "Free online calculator to determine Return on Ad Spend (ROAS) for Facebook advertising campaigns."
-    }
-    </script>
-
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
@@ -84,8 +72,7 @@
         .card { background: #111827; border: 1px solid #1f2937; padding: 24px; border-radius: 12px; margin-bottom: 25px; }
         .calc-card { background: linear-gradient(to right, #111827, #1e3a5f); }
         label { font-size: 14px; color: #d1d5db; display: block; margin-bottom: 6px; font-weight: 600; }
-        input[type="number"] { width: 100%; padding: 12px; background: #030712; border: 1px solid #374151; color: #fff; border-radius: 6px; font-size: 15px; margin-bottom: 18px; }
-        input[type="number"]:focus { border-color: #1877f2; outline: none; }
+        input[type="range"] { width: 100%; height: 8px; background: #374151; border-radius: 5px; outline: none; accent-color: #3b82f6; margin: 15px 0 25px 0; }
         .highlight-box { background: #030712; border: 1px solid #1877f2; border-radius: 8px; padding: 16px; margin-top: 15px; text-align: center; }
         .highlight-box .big { font-size: 28px; color: #1877f2; font-weight: bold; }
         table { width: 100%; border-collapse: collapse; margin: 15px 0; }
@@ -94,7 +81,7 @@
         table td { color: #d1d5db; }
         .faq-item { margin-bottom: 18px; }
         .faq-item h3 { color: #1877f2; margin-bottom: 6px; }
-        .btn-wa { background: #10b981; color: #030712; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 20px; transition: background 0.2s; }
+        .btn-wa { background: #10b981; color: #030712; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 20px; transition: background 0.2s; text-align: center; display: block; text-decoration: none; }
         .btn-wa:hover { background: #059669; color: #fff; }
         .formula-box { background: #030712; border: 1px solid #374151; border-radius: 8px; padding: 16px; text-align: center; font-size: 16px; color: #1877f2; font-weight: 600; margin: 15px 0; }
         .related-tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
@@ -116,23 +103,23 @@
         <div class="breadcrumb"><a href="/">Home</a> / <a href="/">Tools</a> / Facebook Ads ROAS Calculator</div>
 
         <h1>📘 Free Facebook Ads ROAS Calculator</h1>
-        <p class="intro">Instantly calculate your Return on Ad Spend (ROAS) for Facebook ad campaigns. No signup required.</p>
+        <p class="intro">Instantly calculate your Return on Ad Spend (ROAS) for Facebook ad campaigns using our interactive slider tool.</p>
 
-        <!-- CALCULATOR -->
+        <!-- RANGE SLIDER CALCULATOR -->
         <div class="card calc-card">
-            <label for="spend">Facebook Ad Spend ($)</label>
-            <input type="number" id="spend" value="1000" min="0" oninput="calculate()">
+            <label for="r-spend">Monthly Facebook Ad Budget: <span id="v-spend" style="color: #60a5fa; font-weight: bold;">$1,000</span></label>
+            <input type="range" id="r-spend" min="200" max="15000" step="100" value="1000" oninput="calcRoi()">
 
-            <label for="revenue">Revenue Generated from Facebook Ads ($)</label>
-            <input type="number" id="revenue" value="4000" min="0" oninput="calculate()">
+            <label for="r-roas">Target Facebook ROAS: <span id="v-roas" style="color: #60a5fa; font-weight: bold;">4.0x</span></label>
+            <input type="range" id="r-roas" min="1.0" max="10.0" step="0.5" value="4.0" oninput="calcRoi()">
 
             <div class="highlight-box">
-                <div class="label" style="margin-bottom:6px; color:#9ca3af;">Your Facebook Ads ROAS</div>
-                <div class="big" id="roas-result">4.00x</div>
+                <div class="label" style="margin-bottom:6px; color:#9ca3af;">Estimated Facebook Revenue</div>
+                <div class="big" id="v-rev">$4,000</div>
                 <div class="label" style="margin-top:6px; font-size:13px; color:#d1d5db;" id="roas-explain">Every $1 spent returns $4.00</div>
             </div>
 
-            <button type="button" class="btn-wa" onclick="window.open('https://wa.me/966571957376?text=' + encodeURIComponent('Hi, I used the Facebook Ads ROAS calculator and want help improving my campaigns.'), '_blank')">Want Help Hitting This ROAS? Get a Free Proposal</button>
+            <a href="#" id="wa-btn" class="btn-wa" onclick="sendWhatsApp(event)">Want Help Hitting This ROAS? Get a Free Proposal</a>
         </div>
 
         <!-- WHAT IS ROAS -->
@@ -189,7 +176,7 @@
         <div class="card" style="text-align:center; margin-top:25px;">
             <h3 style="color:#f3f4f6; margin-bottom:8px;">Need help hitting a higher Facebook Ads ROAS?</h3>
             <p style="margin-bottom:15px;">Our team manages Facebook ad campaigns focused on real return, not just clicks.</p>
-            <button type="button" class="btn-wa" onclick="window.open('https://wa.me/966571957376?text=' + encodeURIComponent('Hi, I want a free proposal to improve my Facebook Ads ROAS.'), '_blank')">Get a Free Proposal via WhatsApp</button>
+            <button type="button" class="btn-wa" onclick="sendWhatsApp(event)">Get a Free Proposal via WhatsApp</button>
         </div>
 
         <footer>
@@ -198,15 +185,30 @@
     </div>
 
     <script>
-        function calculate() {
-            const spend = parseFloat(document.getElementById('spend').value) || 0;
-            const revenue = parseFloat(document.getElementById('revenue').value) || 0;
-            const roas = spend > 0 ? (revenue / spend) : 0;
+        const PHONE = "966571957376";
 
-            document.getElementById('roas-result').innerText = roas.toFixed(2) + 'x';
-            document.getElementById('roas-explain').innerText = 'Every $1 spent returns $' + roas.toFixed(2);
+        function calcRoi() {
+            const spend = parseFloat(document.getElementById('r-spend').value);
+            const roas = parseFloat(document.getElementById('r-roas').value);
+            const rev = Math.round(spend * roas);
+
+            document.getElementById('v-spend').innerText = '$' + spend.toLocaleString();
+            document.getElementById('v-roas').innerText = roas.toFixed(1) + 'x';
+            document.getElementById('v-rev').innerText = '$' + rev.toLocaleString();
+            document.getElementById('roas-explain').innerText = `Every $1 spent returns $${roas.toFixed(2)}`;
         }
-        calculate();
+
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const spend = document.getElementById('v-spend').innerText;
+            const roas = document.getElementById('v-roas').innerText;
+            const rev = document.getElementById('v-rev').innerText;
+
+            let msg = "السلام عليكم!\n\n*Facebook Ads Calculator Inquiry:*\n- Budget: " + spend + "\n- Target ROAS: " + roas + "\n- Est. Revenue: " + rev;
+            window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank');
+        }
+
+        calcRoi();
     </script>
 </body>
 </html>
