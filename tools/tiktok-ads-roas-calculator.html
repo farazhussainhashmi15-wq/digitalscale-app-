@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free TikTok Ads ROAS Calculator | Calculate TikTok Ad Returns</title>
+    <meta name="description" content="Free TikTok Ads ROAS calculator — instantly calculate Return on Ad Spend for TikTok short-form video campaigns and Spark Ads.">
+    <meta property="og:title" content="Free TikTok Ads ROAS Calculator">
+    <meta property="og:description" content="Calculate your TikTok Ads Return on Ad Spend (ROAS). Free interactive calculator.">
+    <meta name="keywords" content="tiktok ads roas calculator, tiktok ads roi calculator, tiktok video ad return calculator">
+    <meta property="og:image" content="https://digitalscale-app.vercel.app/logo.png">
+    <meta property="og:url" content="https://digitalscale-app.vercel.app/tools/tiktok-ads-roas-calculator.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://digitalscale-app.vercel.app/tools/tiktok-ads-roas-calculator.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY3JBDDWFX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JY3JBDDWFX');
+    </script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #1f2937; margin-bottom: 30px; }
+        .logo img { max-height: 55px; width: auto; object-fit: contain; display: block; }
+        .breadcrumb { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
+        .breadcrumb a { color: #10b981; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 { font-size: 26px; margin-bottom: 10px; color: #fff; }
+        h2 { font-size: 20px; margin: 30px 0 12px; color: #f3f4f6; }
+        h3 { font-size: 16px; margin: 20px 0 8px; color: #d1d5db; }
+        p { color: #d1d5db; font-size: 15px; margin-bottom: 12px; }
+        .intro { color: #9ca3af; font-size: 15px; margin-bottom: 25px; }
+        .card { background: #111827; border: 1px solid #1f2937; padding: 24px; border-radius: 12px; margin-bottom: 25px; }
+        .calc-card { background: linear-gradient(to right, #111827, #022c22); }
+        label { font-size: 14px; color: #d1d5db; display: block; margin-bottom: 6px; font-weight: 600; }
+        input[type="range"] { width: 100%; height: 8px; background: #374151; border-radius: 5px; outline: none; accent-color: #25f4ee; margin: 15px 0 25px 0; }
+        .highlight-box { background: #030712; border: 1px solid #25f4ee; border-radius: 8px; padding: 16px; margin-top: 15px; text-align: center; }
+        .highlight-box .big { font-size: 28px; color: #25f4ee; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        table th, table td { text-align: left; padding: 10px; border-bottom: 1px solid #1f2937; font-size: 14px; }
+        table th { color: #9ca3af; font-weight: 600; }
+        table td { color: #d1d5db; }
+        .faq-item { margin-bottom: 18px; }
+        .faq-item h3 { color: #25f4ee; margin-bottom: 6px; }
+        .btn-wa { background: #10b981; color: #030712; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 20px; transition: background 0.2s; text-align: center; display: block; text-decoration: none; }
+        .btn-wa:hover { background: #059669; color: #fff; }
+        .formula-box { background: #030712; border: 1px solid #374151; border-radius: 8px; padding: 16px; text-align: center; font-size: 16px; color: #25f4ee; font-weight: 600; margin: 15px 0; }
+        .related-tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .related-tools a { background: #111827; border: 1px solid #374151; color: #d1d5db; padding: 8px 14px; border-radius: 999px; font-size: 13px; text-decoration: none; transition: all 0.2s; }
+        .related-tools a:hover { border-color: #10b981; color: #10b981; }
+        footer { text-align: center; color: #6b7280; font-size: 13px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1f2937; }
+        footer a { color: #10b981; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/"><img src="../logo.png" alt="DigitalScale.ai" loading="eager"></a>
+            </div>
+        </header>
+
+        <div class="breadcrumb"><a href="/">Home</a> / <a href="/">Tools</a> / TikTok Ads ROAS Calculator</div>
+
+        <h1>🎵 Free TikTok Ads ROAS Calculator</h1>
+        <p class="intro">Estimate your short-form video performance and viral advertising campaign returns instantly.</p>
+
+        <div class="card calc-card">
+            <label for="r-spend">Monthly TikTok Ad Budget: <span id="v-spend" style="color: #6ee7b7; font-weight: bold;">$1,000</span></label>
+            <input type="range" id="r-spend" min="200" max="20000" step="100" value="1000" oninput="calcRoi()">
+
+            <label for="r-roas">Target TikTok ROAS: <span id="v-roas" style="color: #6ee7b7; font-weight: bold;">3.5x</span></label>
+            <input type="range" id="r-roas" min="1.0" max="10.0" step="0.5" value="3.5" oninput="calcRoi()">
+
+            <div class="highlight-box">
+                <div class="label" style="margin-bottom:6px; color:#9ca3af;">Estimated TikTok Revenue</div>
+                <div class="big" id="v-rev">$3,500</div>
+                <div class="label" style="margin-top:6px; font-size:13px; color:#d1d5db;" id="roas-explain">Every $1 spent returns $3.50</div>
+            </div>
+
+            <a href="#" class="btn-wa" onclick="sendWhatsApp(event)">Need Help Scaling TikTok Ads? Get a Free Proposal</a>
+        </div>
+
+        <h2>What is TikTok Ads ROAS?</h2>
+        <p><strong>TikTok Ads ROAS</strong> measures the gross revenue generated relative to your total spend on TikTok advertising. Because TikTok relies heavily on native content style, high creative velocity is key.</p>
+
+        <h3>TikTok ROAS Formula</h3>
+        <div class="formula-box">TikTok ROAS = Revenue from TikTok Ads ÷ TikTok Ad Spend</div>
+
+        <h2>What's a Good TikTok ROAS?</h2>
+        <table>
+            <tr><th>Industry / Niche</th><th>Typical Good ROAS</th></tr>
+            <tr><td>E-commerce & Impulse Buys</td><td>3x – 5x</td></tr>
+            <tr><td>App Installs & Gaming</td><td>2.5x – 4x</td></tr>
+        </table>
+
+        <h2>How to Improve TikTok Ad Returns</h2>
+        <p><strong>1. Hook viewers in 3 seconds</strong> with high-energy visuals and native storytelling.</p>
+        <p><strong>2. Spark Ads amplification</strong> by turning top organic posts into high-performing paid ads.</p>
+        <p><strong>3. Refresh creatives weekly</strong> to avoid ad fatigue on fast-paced feeds.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Is TikTok effective for D2C brands?</h3>
+            <p>Yes, TikTok delivers some of the lowest CPMs and highest engagement rates for impulse e-commerce brands when matched with native UGC creatives.</p>
+        </div>
+
+        <h2>Compare ROAS on Other Platforms</h2>
+        <div class="related-tools">
+            <a href="/">All Platforms (Home)</a>
+            <a href="instagram-ads-roas-calculator.html">Instagram Ads</a>
+            <a href="facebook-ads-roas-calculator.html">Facebook Ads</a>
+            <a href="google-ads-roas-calculator.html">Google Ads</a>
+        </div>
+
+        <footer>
+            <p><a href="/">← Back to DigitalScale.ai</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const PHONE = "966571957376";
+        function calcRoi() {
+            const spend = parseFloat(document.getElementById('r-spend').value);
+            const roas = parseFloat(document.getElementById('r-roas').value);
+            const rev = Math.round(spend * roas);
+            document.getElementById('v-spend').innerText = '$' + spend.toLocaleString();
+            document.getElementById('v-roas').innerText = roas.toFixed(1) + 'x';
+            document.getElementById('v-rev').innerText = '$' + rev.toLocaleString();
+            document.getElementById('roas-explain').innerText = `Every $1 spent returns $${roas.toFixed(2)}`;
+        }
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const spend = document.getElementById('v-spend').innerText;
+            const roas = document.getElementById('v-roas').innerText;
+            const rev = document.getElementById('v-rev').innerText;
+            let msg = "السلام عليكم!\n\n*TikTok Ads Calculator Inquiry:*\n- Budget: " + spend + "\n- Target ROAS: " + roas + "\n- Est. Revenue: " + rev;
+            window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank');
+        }
+        calcRoi();
+    </script>
+</body>
+</html>
