@@ -9,9 +9,9 @@
     <meta property="og:description" content="Instantly calculate your Facebook Ads Return on Ad Spend (ROAS). Free tool, no signup required.">
     <meta name="keywords" content="facebook ads roas calculator, facebook ads roi calculator, facebook advertising return calculator, facebook ads budget calculator">
     <meta property="og:image" content="https://digitalscale-app.vercel.app/logo.png">
-    <meta property="og:url" content="https://digitalscale-app.vercel.app/tools/facebook-ads-roas-calculator">
+    <meta property="og:url" content="https://digitalscale-app.vercel.app/tools/facebook-ads-roas-calculator.html">
     <meta property="og:type" content="website">
-    <link rel="canonical" href="https://digitalscale-app.vercel.app/tools/facebook-ads-roas-calculator">
+    <link rel="canonical" href="https://digitalscale-app.vercel.app/tools/facebook-ads-roas-calculator.html">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY3JBDDWFX"></script>
     <script>
@@ -72,10 +72,11 @@
         body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
         .container { max-width: 900px; margin: 0 auto; }
         header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #1f2937; margin-bottom: 30px; }
-        .logo img { max-height: 55px; width: auto; }
+        .logo img { max-height: 55px; width: auto; object-fit: contain; display: block; }
         .breadcrumb { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
         .breadcrumb a { color: #10b981; text-decoration: none; }
-        h1 { font-size: 26px; margin-bottom: 10px; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 { font-size: 26px; margin-bottom: 10px; color: #fff; }
         h2 { font-size: 20px; margin: 30px 0 12px; color: #f3f4f6; }
         h3 { font-size: 16px; margin: 20px 0 8px; color: #d1d5db; }
         p { color: #d1d5db; font-size: 15px; margin-bottom: 12px; }
@@ -93,11 +94,11 @@
         table td { color: #d1d5db; }
         .faq-item { margin-bottom: 18px; }
         .faq-item h3 { color: #1877f2; margin-bottom: 6px; }
-        .btn-wa { background: #10b981; color: #030712; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 20px; }
+        .btn-wa { background: #10b981; color: #030712; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 20px; transition: background 0.2s; }
         .btn-wa:hover { background: #059669; color: #fff; }
         .formula-box { background: #030712; border: 1px solid #374151; border-radius: 8px; padding: 16px; text-align: center; font-size: 16px; color: #1877f2; font-weight: 600; margin: 15px 0; }
         .related-tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .related-tools a { background: #111827; border: 1px solid #374151; color: #d1d5db; padding: 8px 14px; border-radius: 999px; font-size: 13px; text-decoration: none; }
+        .related-tools a { background: #111827; border: 1px solid #374151; color: #d1d5db; padding: 8px 14px; border-radius: 999px; font-size: 13px; text-decoration: none; transition: all 0.2s; }
         .related-tools a:hover { border-color: #10b981; color: #10b981; }
         footer { text-align: center; color: #6b7280; font-size: 13px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1f2937; }
         footer a { color: #10b981; text-decoration: none; }
@@ -108,11 +109,11 @@
     <div class="container">
         <header>
             <div class="logo">
-                <img src="/logo.png" alt="DigitalScale.ai" loading="eager">
+                <a href="/"><img src="../logo.png" alt="DigitalScale.ai" loading="eager"></a>
             </div>
         </header>
 
-        <div class="breadcrumb"><a href="/">Home</a> / <a href="/tools/roas-calculator">Tools</a> / Facebook Ads ROAS Calculator</div>
+        <div class="breadcrumb"><a href="/">Home</a> / <a href="/">Tools</a> / Facebook Ads ROAS Calculator</div>
 
         <h1>📘 Free Facebook Ads ROAS Calculator</h1>
         <p class="intro">Instantly calculate your Return on Ad Spend (ROAS) for Facebook ad campaigns. No signup required.</p>
@@ -126,9 +127,9 @@
             <input type="number" id="revenue" value="4000" min="0" oninput="calculate()">
 
             <div class="highlight-box">
-                <div class="label" style="margin-bottom:6px;">Your Facebook Ads ROAS</div>
+                <div class="label" style="margin-bottom:6px; color:#9ca3af;">Your Facebook Ads ROAS</div>
                 <div class="big" id="roas-result">4.00x</div>
-                <div class="label" style="margin-top:6px; font-size:13px;" id="roas-explain">Every $1 spent returns $4.00</div>
+                <div class="label" style="margin-top:6px; font-size:13px; color:#d1d5db;" id="roas-explain">Every $1 spent returns $4.00</div>
             </div>
 
             <button type="button" class="btn-wa" onclick="window.open('https://wa.me/966571957376?text=' + encodeURIComponent('Hi, I used the Facebook Ads ROAS calculator and want help improving my campaigns.'), '_blank')">Want Help Hitting This ROAS? Get a Free Proposal</button>
@@ -179,16 +180,15 @@
         <!-- RELATED TOOLS -->
         <h2>Compare ROAS on Other Platforms</h2>
         <div class="related-tools">
-            <a href="/tools/roas-calculator">All Platforms</a>
-            <a href="/tools/snapchat-ads-roas-calculator">Snapchat Ads</a>
-            <a href="/tools/instagram-ads-roas-calculator">Instagram Ads</a>
-            <a href="/tools/google-ads-roas-calculator">Google Ads</a>
+            <a href="/">All Platforms (Home)</a>
+            <a href="snapchat-ads-roas-calculator.html">Snapchat Ads</a>
+            <a href="google-ads-roas-calculator.html">Google Ads</a>
         </div>
 
         <!-- CTA -->
         <div class="card" style="text-align:center; margin-top:25px;">
-            <h3 style="color:#f3f4f6;">Need help hitting a higher Facebook Ads ROAS?</h3>
-            <p>Our team manages Facebook ad campaigns focused on real return, not just clicks.</p>
+            <h3 style="color:#f3f4f6; margin-bottom:8px;">Need help hitting a higher Facebook Ads ROAS?</h3>
+            <p style="margin-bottom:15px;">Our team manages Facebook ad campaigns focused on real return, not just clicks.</p>
             <button type="button" class="btn-wa" onclick="window.open('https://wa.me/966571957376?text=' + encodeURIComponent('Hi, I want a free proposal to improve my Facebook Ads ROAS.'), '_blank')">Get a Free Proposal via WhatsApp</button>
         </div>
 
