@@ -42,6 +42,9 @@
         input[type="text"] { width: 100%; padding: 12px; background: #030712; border: 1px solid #374151; color: #fff; border-radius: 6px; }
         input[type="text"]:focus { border-color: #10b981; outline: none; }
         .summary-box { background: #030712; padding: 15px; border-radius: 8px; border: 1px solid #1f2937; min-height: 80px; margin-bottom: 15px; font-size: 14px; color: #d1d5db; }
+        .tool-link-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 15px; }
+        .tool-btn { background: #0b0f19; border: 1px solid #374151; padding: 12px 15px; border-radius: 8px; color: #fff; text-decoration: none; font-weight: 600; font-size: 14px; display: flex; justify-content: space-between; align-items: center; transition: all 0.2s; }
+        .tool-btn:hover { border-color: #10b981; background: #111827; color: #34d399; }
     </style>
 </head>
 <body>
@@ -171,6 +174,16 @@
             <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #1f2937; display: flex; justify-content: space-between; font-weight: bold;">
                 <span id="t-rev">Estimated Campaign Revenue:</span>
                 <span id="v-rev" style="color: #10b981; font-size: 20px;">$3,500</span>
+            </div>
+
+            <!-- STANDALONE TOOLS INTERNAL LINKS (SEO Internal Linking) -->
+            <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #1f2937;">
+                <p style="font-size: 13px; color: #9ca3af; margin-bottom: 10px; font-weight: 600;">Dedicated Platform Calculators:</p>
+                <div class="tool-link-grid">
+                    <a href="/tools/facebook-ads-roas-calculator.html" class="tool-btn"><span>Facebook Ads ROAS</span> <span>→</span></a>
+                    <a href="/tools/snapchat-ads-roas-calculator.html" class="tool-btn"><span>Snapchat Ads ROAS</span> <span>→</span></a>
+                    <a href="/tools/google-ads-roas-calculator.html" class="tool-btn"><span>Google Ads ROAS</span> <span>→</span></a>
+                </div>
             </div>
         </div>
     </div>
