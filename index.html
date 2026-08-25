@@ -32,7 +32,7 @@
         h1 span { background: linear-gradient(to right, #10b981, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .subtitle { color: #9ca3af; font-size: 15px; max-width: 650px; margin: 0 auto 25px auto; }
         
-        /* Trust Badges */
+        /* Trust Bar */
         .trust-bar { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 35px; padding: 12px; background: #111827; border: 1px solid #1f2937; border-radius: 10px; font-size: 13px; color: #d1d5db; }
         .trust-item { display: flex; align-items: center; gap: 6px; }
         .trust-item span { color: #10b981; font-weight: bold; }
@@ -41,7 +41,8 @@
         .tool-card { background: #111827; border: 1px solid #1f2937; padding: 20px 24px; border-radius: 12px; text-decoration: none; color: inherit; display: flex; align-items: center; justify-content: space-between; transition: all 0.25s ease; }
         .tool-card:hover { border-color: #10b981; transform: translateY(-2px); background: #161e2e; }
         .tool-info { display: flex; align-items: center; gap: 16px; }
-        .tool-icon { font-size: 32px; line-height: 1; min-width: 36px; text-align: center; }
+        .tool-icon { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .tool-icon svg { width: 100%; height: 100%; object-fit: contain; }
         .tool-title { font-size: 17px; color: #fff; font-weight: 600; margin-bottom: 3px; }
         .tool-desc { font-size: 13px; color: #9ca3af; }
         .arrow-badge { background: #030712; color: #10b981; border: 1px solid #1f2937; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
@@ -72,9 +73,12 @@
 
         <!-- ALL PLATFORM CALCULATORS GRID -->
         <div class="tools-grid">
+            <!-- Facebook -->
             <a href="tools/facebook-ads-roas-calculator.html" class="tool-card">
                 <div class="tool-info">
-                    <div class="tool-icon">📱</div>
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </div>
                     <div>
                         <div class="tool-title">Facebook Ads ROAS Calculator</div>
                         <div class="tool-desc">Calculate return and revenue for Facebook ad campaigns.</div>
@@ -83,9 +87,15 @@
                 <div class="arrow-badge">→</div>
             </a>
 
+            <!-- Instagram -->
             <a href="tools/instagram-ads-roas-calculator.html" class="tool-card">
                 <div class="tool-info">
-                    <div class="tool-icon">📸</div>
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24" fill="url(#instagram-gradient)">
+                            <defs><linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#FFDC80"/><stop offset="50%" stop-color="#F56040"/><stop offset="100%" stop-color="#833AB4"/></linearGradient></defs>
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </div>
                     <div>
                         <div class="tool-title">Instagram Ads ROAS Calculator</div>
                         <div class="tool-desc">Estimate ROI for Instagram Reels, Stories, and feed ads.</div>
@@ -94,9 +104,12 @@
                 <div class="arrow-badge">→</div>
             </a>
 
+            <!-- TikTok -->
             <a href="tools/tiktok-ads-roas-calculator.html" class="tool-card">
                 <div class="tool-info">
-                    <div class="tool-icon">🎵</div>
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24" fill="#ffffff"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/></svg>
+                    </div>
                     <div>
                         <div class="tool-title">TikTok Ads ROAS Calculator</div>
                         <div class="tool-desc">Calculate short-form video performance and viral ad returns.</div>
@@ -105,9 +118,12 @@
                 <div class="arrow-badge">→</div>
             </a>
 
+            <!-- Snapchat -->
             <a href="tools/snapchat-ads-roas-calculator.html" class="tool-card">
                 <div class="tool-info">
-                    <div class="tool-icon">👻</div>
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24" fill="#FFFC00"><path d="M12.012 1.875c2.612 0 4.45 1.758 4.45 4.383 0 1.05-.28 2.062-.835 2.862.62.247 1.157.65 1.56 1.173.498.647.78 1.458.78 2.333 0 .76-.234 1.468-.646 2.05-.098.14-.145.31-.115.485.053.308.31.545.626.577.21.02.433-.03.605-.145.41-.275.932-.42 1.48-.42 1.442 0 2.612 1.17 2.612 2.612 0 1.25-.885 2.302-2.065 2.552-.208.043-.35.228-.35.44 0 .522-.16 1.03-.46 1.45-.615.865-1.615 1.385-2.735 1.385-.458 0-.91-.078-1.34-.23-.625-.222-1.285-.34-1.955-.34-.67 0-1.33.118-1.955.34-.43.152-.882.23-1.34.23-1.12 0-2.12-.52-2.735-1.385-.3-.42-.46-.928-.46-1.45 0-.212-.142-.397-.35-.44-1.18-.25-2.065-1.302-2.065-2.552 0-1.442 1.17-2.612 2.612-2.612.548 0 1.07.145 1.48.42.172.115.395.165.605.145.316-.032.573-.27.626-.577.03-.175-.017-.345-.115-.485-.412-.582-.646-1.29-.646-2.05 0-.875.282-1.686.78-2.333.403-.523.94-.926 1.56-1.173-.555-.8-.835-1.812-.835-2.862 0-2.625 1.838-4.383 4.45-4.383z"/></svg>
+                    </div>
                     <div>
                         <div class="tool-title">Snapchat Ads ROAS Calculator</div>
                         <div class="tool-desc">Evaluate mobile engagement and snap campaign returns.</div>
@@ -116,9 +132,12 @@
                 <div class="arrow-badge">→</div>
             </a>
 
+            <!-- Google -->
             <a href="tools/google-ads-roas-calculator.html" class="tool-card">
                 <div class="tool-info">
-                    <div class="tool-icon">📈</div>
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.13 0-5.78-2.11-6.73-4.96H1.18v3.15C3.15 21.32 7.22 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.24c-.25-.72-.38-1.49-.38-2.24s.13-1.52.38-2.24V6.6H1.18C.43 8.13 0 9.87 0 12s.43 3.87 1.18 5.4l4.09-3.16z"/><path fill="#EA4335" d="M12 4.75c1.76 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.22 0 3.15 2.68 1.18 6.6l4.09 3.15c.95-2.85 3.6-4.96 6.73-4.96z"/></svg>
+                    </div>
                     <div>
                         <div class="tool-title">Google Ads ROAS Calculator</div>
                         <div class="tool-desc">Estimate returns for Google Search, Shopping, and PMax.</div>
@@ -127,9 +146,12 @@
                 <div class="arrow-badge">→</div>
             </a>
 
+            <!-- LinkedIn -->
             <a href="tools/linkedin-ads-roi-calculator.html" class="tool-card">
                 <div class="tool-info">
-                    <div class="tool-icon">💼</div>
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24" fill="#0A66C2"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </div>
                     <div>
                         <div class="tool-title">LinkedIn Ads ROI Calculator</div>
                         <div class="tool-desc">Estimate B2B lead generation cost, pipeline value, and close rates.</div>
@@ -138,9 +160,12 @@
                 <div class="arrow-badge">→</div>
             </a>
 
+            <!-- WhatsApp -->
             <a href="tools/whatsapp-marketing-roi-calculator.html" class="tool-card">
                 <div class="tool-info">
-                    <div class="tool-icon">💚</div>
+                    <div class="tool-icon">
+                        <svg viewBox="0 0 24 24" fill="#25D366"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.124-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                    </div>
                     <div>
                         <div class="tool-title">WhatsApp Marketing ROI Calculator</div>
                         <div class="tool-desc">Calculate leads, conversions, and sales revenue from WhatsApp funnels.</div>
