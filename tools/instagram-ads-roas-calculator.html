@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Instagram Ads ROAS Calculator | Calculate Instagram Ad ROI</title>
+    <meta name="description" content="Free Instagram Ads ROAS calculator — instantly calculate your Return on Ad Spend for Instagram Reels, Stories, and feed ad campaigns. Learn benchmarks and tips.">
+    <meta property="og:title" content="Free Instagram Ads ROAS Calculator">
+    <meta property="og:description" content="Instantly calculate your Instagram Ads Return on Ad Spend (ROAS). Free tool, no signup required.">
+    <meta name="keywords" content="instagram ads roas calculator, instagram ads roi calculator, ig ads return calculator">
+    <meta property="og:image" content="https://digitalscale-app.vercel.app/logo.png">
+    <meta property="og:url" content="https://digitalscale-app.vercel.app/tools/instagram-ads-roas-calculator.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://digitalscale-app.vercel.app/tools/instagram-ads-roas-calculator.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY3JBDDWFX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JY3JBDDWFX');
+    </script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #1f2937; margin-bottom: 30px; }
+        .logo img { max-height: 55px; width: auto; object-fit: contain; display: block; }
+        .breadcrumb { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
+        .breadcrumb a { color: #10b981; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 { font-size: 26px; margin-bottom: 10px; color: #fff; }
+        h2 { font-size: 20px; margin: 30px 0 12px; color: #f3f4f6; }
+        h3 { font-size: 16px; margin: 20px 0 8px; color: #d1d5db; }
+        p { color: #d1d5db; font-size: 15px; margin-bottom: 12px; }
+        .intro { color: #9ca3af; font-size: 15px; margin-bottom: 25px; }
+        .card { background: #111827; border: 1px solid #1f2937; padding: 24px; border-radius: 12px; margin-bottom: 25px; }
+        .calc-card { background: linear-gradient(to right, #111827, #4a044e); }
+        label { font-size: 14px; color: #d1d5db; display: block; margin-bottom: 6px; font-weight: 600; }
+        input[type="range"] { width: 100%; height: 8px; background: #374151; border-radius: 5px; outline: none; accent-color: #e1306c; margin: 15px 0 25px 0; }
+        .highlight-box { background: #030712; border: 1px solid #e1306c; border-radius: 8px; padding: 16px; margin-top: 15px; text-align: center; }
+        .highlight-box .big { font-size: 28px; color: #e1306c; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        table th, table td { text-align: left; padding: 10px; border-bottom: 1px solid #1f2937; font-size: 14px; }
+        table th { color: #9ca3af; font-weight: 600; }
+        table td { color: #d1d5db; }
+        .faq-item { margin-bottom: 18px; }
+        .faq-item h3 { color: #e1306c; margin-bottom: 6px; }
+        .btn-wa { background: #10b981; color: #030712; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 20px; transition: background 0.2s; text-align: center; display: block; text-decoration: none; }
+        .btn-wa:hover { background: #059669; color: #fff; }
+        .formula-box { background: #030712; border: 1px solid #374151; border-radius: 8px; padding: 16px; text-align: center; font-size: 16px; color: #e1306c; font-weight: 600; margin: 15px 0; }
+        .related-tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .related-tools a { background: #111827; border: 1px solid #374151; color: #d1d5db; padding: 8px 14px; border-radius: 999px; font-size: 13px; text-decoration: none; transition: all 0.2s; }
+        .related-tools a:hover { border-color: #10b981; color: #10b981; }
+        footer { text-align: center; color: #6b7280; font-size: 13px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1f2937; }
+        footer a { color: #10b981; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/"><img src="../logo.png" alt="DigitalScale.ai" loading="eager"></a>
+            </div>
+        </header>
+
+        <div class="breadcrumb"><a href="/">Home</a> / <a href="/">Tools</a> / Instagram Ads ROAS Calculator</div>
+
+        <h1>📸 Free Instagram Ads ROAS Calculator</h1>
+        <p class="intro">Instantly evaluate your Instagram Reels, Stories, and feed ad campaign returns using our interactive slider.</p>
+
+        <div class="card calc-card">
+            <label for="r-spend">Monthly Instagram Ad Budget: <span id="v-spend" style="color: #f472b6; font-weight: bold;">$1,000</span></label>
+            <input type="range" id="r-spend" min="200" max="20000" step="100" value="1000" oninput="calcRoi()">
+
+            <label for="r-roas">Target Instagram ROAS: <span id="v-roas" style="color: #f472b6; font-weight: bold;">4.0x</span></label>
+            <input type="range" id="r-roas" min="1.0" max="12.0" step="0.5" value="4.0" oninput="calcRoi()">
+
+            <div class="highlight-box">
+                <div class="label" style="margin-bottom:6px; color:#9ca3af;">Estimated Instagram Revenue</div>
+                <div class="big" id="v-rev">$4,000</div>
+                <div class="label" style="margin-top:6px; font-size:13px; color:#d1d5db;" id="roas-explain">Every $1 spent returns $4.00</div>
+            </div>
+
+            <a href="#" class="btn-wa" onclick="sendWhatsApp(event)">Want Help Scaling Instagram Ads? Get a Free Proposal</a>
+        </div>
+
+        <h2>What is Instagram Ads ROAS?</h2>
+        <p><strong>Instagram Ads ROAS</strong> measures the income generated per dollar spent on Instagram placements. High-converting Reels and engaging visual storytelling drive strong return rates.</p>
+
+        <h3>Instagram ROAS Formula</h3>
+        <div class="formula-box">Instagram ROAS = Revenue from Instagram Ads ÷ Instagram Ad Spend</div>
+
+        <h2>What's a Good Instagram Ads ROAS?</h2>
+        <table>
+            <tr><th>Campaign Focus</th><th>Typical Good ROAS</th></tr>
+            <tr><td>E-commerce / D2C Brands</td><td>3.5x – 6x</td></tr>
+            <tr><td>Lead Generation & Services</td><td>3x – 5x</td></tr>
+        </table>
+
+        <h2>How to Improve Your Instagram Ads ROAS</h2>
+        <p><strong>1. Prioritize Reels placements</strong> as short-form vertical video yields higher engagement and lower CPMs.</p>
+        <p><strong>2. Test UGC (User Generated Content)</strong> creators to build trust and boost conversion rates.</p>
+        <p><strong>3. Use Advantage+ shopping campaigns</strong> for automated audience optimization.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>What is a good ROAS on Instagram?</h3>
+            <p>A ROAS between 3.5x and 5x is typically considered a healthy target for profitable growth on Instagram.</p>
+        </div>
+
+        <h2>Compare ROAS on Other Platforms</h2>
+        <div class="related-tools">
+            <a href="/">All Platforms (Home)</a>
+            <a href="facebook-ads-roas-calculator.html">Facebook Ads</a>
+            <a href="tiktok-ads-roas-calculator.html">TikTok Ads</a>
+            <a href="google-ads-roas-calculator.html">Google Ads</a>
+        </div>
+
+        <footer>
+            <p><a href="/">← Back to DigitalScale.ai</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const PHONE = "966571957376";
+        function calcRoi() {
+            const spend = parseFloat(document.getElementById('r-spend').value);
+            const roas = parseFloat(document.getElementById('r-roas').value);
+            const rev = Math.round(spend * roas);
+            document.getElementById('v-spend').innerText = '$' + spend.toLocaleString();
+            document.getElementById('v-roas').innerText = roas.toFixed(1) + 'x';
+            document.getElementById('v-rev').innerText = '$' + rev.toLocaleString();
+            document.getElementById('roas-explain').innerText = `Every $1 spent returns $${roas.toFixed(2)}`;
+        }
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const spend = document.getElementById('v-spend').innerText;
+            const roas = document.getElementById('v-roas').innerText;
+            const rev = document.getElementById('v-rev').innerText;
+            let msg = "السلام عليكم!\n\n*Instagram Ads Calculator Inquiry:*\n- Budget: " + spend + "\n- Target ROAS: " + roas + "\n- Est. Revenue: " + rev;
+            window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank');
+        }
+        calcRoi();
+    </script>
+</body>
+</html>
