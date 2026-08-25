@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free LinkedIn Ads ROI & Lead Generation Calculator | DigitalScale.ai</title>
+    <meta name="description" content="Free LinkedIn Ads ROI calculator — instantly calculate B2B lead generation cost, conversion value, and return on ad spend for LinkedIn sponsored content.">
+    <meta property="og:title" content="Free LinkedIn Ads ROI Calculator">
+    <meta property="og:description" content="Calculate your B2B LinkedIn advertising ROI and lead value. Free interactive tool.">
+    <meta name="keywords" content="linkedin ads roi calculator, b2b lead generation calculator, linkedin sponsored content roas">
+    <meta property="og:image" content="https://digitalscale-app.vercel.app/logo.png">
+    <meta property="og:url" content="https://digitalscale-app.vercel.app/tools/linkedin-ads-roi-calculator.html">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="https://digitalscale-app.vercel.app/tools/linkedin-ads-roi-calculator.html">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY3JBDDWFX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JY3JBDDWFX');
+    </script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
+        .container { max-width: 900px; margin: 0 auto; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #1f2937; margin-bottom: 30px; }
+        .logo img { max-height: 55px; width: auto; object-fit: contain; display: block; }
+        .breadcrumb { font-size: 13px; color: #6b7280; margin-bottom: 20px; }
+        .breadcrumb a { color: #10b981; text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+        h1 { font-size: 26px; margin-bottom: 10px; color: #fff; }
+        h2 { font-size: 20px; margin: 30px 0 12px; color: #f3f4f6; }
+        h3 { font-size: 16px; margin: 20px 0 8px; color: #d1d5db; }
+        p { color: #d1d5db; font-size: 15px; margin-bottom: 12px; }
+        .intro { color: #9ca3af; font-size: 15px; margin-bottom: 25px; }
+        .card { background: #111827; border: 1px solid #1f2937; padding: 24px; border-radius: 12px; margin-bottom: 25px; }
+        .calc-card { background: linear-gradient(to right, #111827, #1e3a8a); }
+        label { font-size: 14px; color: #d1d5db; display: block; margin-bottom: 6px; font-weight: 600; }
+        input[type="range"] { width: 100%; height: 8px; background: #374151; border-radius: 5px; outline: none; accent-color: #0a66c2; margin: 15px 0 25px 0; }
+        .highlight-box { background: #030712; border: 1px solid #0a66c2; border-radius: 8px; padding: 16px; margin-top: 15px; text-align: center; }
+        .highlight-box .big { font-size: 28px; color: #0a66c2; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        table th, table td { text-align: left; padding: 10px; border-bottom: 1px solid #1f2937; font-size: 14px; }
+        table th { color: #9ca3af; font-weight: 600; }
+        table td { color: #d1d5db; }
+        .faq-item { margin-bottom: 18px; }
+        .faq-item h3 { color: #0a66c2; margin-bottom: 6px; }
+        .btn-wa { background: #10b981; color: #030712; border: none; padding: 14px; width: 100%; font-weight: bold; border-radius: 8px; cursor: pointer; font-size: 16px; margin-top: 20px; transition: background 0.2s; text-align: center; display: block; text-decoration: none; }
+        .btn-wa:hover { background: #059669; color: #fff; }
+        .formula-box { background: #030712; border: 1px solid #374151; border-radius: 8px; padding: 16px; text-align: center; font-size: 16px; color: #0a66c2; font-weight: 600; margin: 15px 0; }
+        .related-tools { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+        .related-tools a { background: #111827; border: 1px solid #374151; color: #d1d5db; padding: 8px 14px; border-radius: 999px; font-size: 13px; text-decoration: none; transition: all 0.2s; }
+        .related-tools a:hover { border-color: #10b981; color: #10b981; }
+        footer { text-align: center; color: #6b7280; font-size: 13px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1f2937; }
+        footer a { color: #10b981; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <a href="/"><img src="../logo.png" alt="DigitalScale.ai" loading="eager"></a>
+            </div>
+        </header>
+
+        <div class="breadcrumb"><a href="/">Home</a> / <a href="/">Tools</a> / LinkedIn Ads ROI Calculator</div>
+
+        <h1>💼 Free LinkedIn Ads & B2B Lead ROI Calculator</h1>
+        <p class="intro">Instantly estimate your B2B pipeline revenue, lead acquisition cost, and return on ad spend for LinkedIn marketing campaigns.</p>
+
+        <div class="card calc-card">
+            <label for="r-spend">Monthly LinkedIn Ad Budget: <span id="v-spend" style="color: #93c5fd; font-weight: bold;">$2,000</span></label>
+            <input type="range" id="r-spend" min="500" max="25000" step="500" value="2000" oninput="calcRoi()">
+
+            <label for="r-cpl">Estimated Cost Per Lead (CPL): <span id="v-cpl" style="color: #93c5fd; font-weight: bold;">$50</span></label>
+            <input type="range" id="r-cpl" min="15" max="250" step="5" value="50" oninput="calcRoi()">
+
+            <label for="r-deal">Lead-to-Client Close Rate: <span id="v-deal" style="color: #93c5fd; font-weight: bold;">10%</span></label>
+            <input type="range" id="r-deal" min="2" max="30" step="1" value="10" oninput="calcRoi()">
+
+            <label for="r-ltv">Average Client Lifetime Value (LTV): <span id="v-ltv" style="color: #93c5fd; font-weight: bold;">$1,500</span></label>
+            <input type="range" id="r-ltv" min="500" max="10000" step="250" value="1500" oninput="calcRoi()">
+
+            <div class="highlight-box">
+                <div class="label" style="margin-bottom:6px; color:#9ca3af;">Estimated Pipeline Revenue</div>
+                <div class="big" id="v-rev">$6,000</div>
+                <div class="label" style="margin-top:6px; font-size:13px; color:#d1d5db;" id="metrics-explain">Total Leads: 40 | Closed Clients: 4 | ROAS: 3.0x</div>
+            </div>
+
+            <a href="#" class="btn-wa" onclick="sendWhatsApp(event)">Want High-Value B2B Leads? Get a Free Strategy</a>
+        </div>
+
+        <h2>What is LinkedIn Ads ROI?</h2>
+        <p><strong>LinkedIn Ads ROI</strong> measures the value generated from professional B2B campaigns relative to your advertising expenditure. Although LinkedIn CPMs are higher, the high ticket size of B2B deals makes it extremely lucrative.</p>
+
+        <h3>LinkedIn Pipeline Formula</h3>
+        <div class="formula-box">Total Revenue = (Ad Spend ÷ CPL) × (Close Rate ÷ 100) × Client LTV</div>
+
+        <h2>What's a Good LinkedIn B2B Benchmark?</h2>
+        <table>
+            <tr><th>Metric</th><th>Average Benchmark</th></tr>
+            <tr><td>Cost Per Lead (CPL)</td><td>$45 – $95</td></tr>
+            <tr><td>Click-Through Rate (CTR)</td><td>0.40% – 0.70%</td></tr>
+        </table>
+
+        <h2>How to Optimize LinkedIn Lead Generation</h2>
+        <p><strong>1. Use LinkedIn Lead Gen Forms</strong> to reduce friction by auto-filling user profile data.</p>
+        <p><strong>2. Target decision-makers strictly</strong> by job titles, seniority, and specific industry filters.</p>
+        <p><strong>3. Promote thought-leadership content</strong> rather than direct hard-sell pitches to build trust.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Is LinkedIn good for small business budgets?</h3>
+            <p>LinkedIn requires higher minimum budgets compared to Meta or TikTok, but it's unmatched for high-ticket B2B services, SaaS, and consulting.</p>
+        </div>
+
+        <h2>Compare Marketing ROI Calculators</h2>
+        <div class="related-tools">
+            <a href="/">All Platforms (Home)</a>
+            <a href="instagram-ads-roas-calculator.html">Instagram Ads</a>
+            <a href="tiktok-ads-roas-calculator.html">TikTok Ads</a>
+            <a href="whatsapp-marketing-roi-calculator.html">WhatsApp ROI</a>
+        </div>
+
+        <footer>
+            <p><a href="/">← Back to DigitalScale.ai</a></p>
+        </footer>
+    </div>
+
+    <script>
+        const PHONE = "966571957376";
+        function calcRoi() {
+            const spend = parseFloat(document.getElementById('r-spend').value);
+            const cpl = parseFloat(document.getElementById('r-cpl').value);
+            const dealRate = parseFloat(document.getElementById('r-deal').value);
+            const ltv = parseFloat(document.getElementById('r-ltv').value);
+            
+            const totalLeads = Math.round(spend / cpl);
+            const closedClients = Math.round(totalLeads * (dealRate / 100));
+            const rev = Math.round(closedClients * ltv);
+            const roas = (rev / spend).toFixed(1);
+
+            document.getElementById('v-spend').innerText = '$' + spend.toLocaleString();
+            document.getElementById('v-cpl').innerText = '$' + cpl.toLocaleString();
+            document.getElementById('v-deal').innerText = dealRate + '%';
+            document.getElementById('v-ltv').innerText = '$' + ltv.toLocaleString();
+            document.getElementById('v-rev').innerText = '$' + rev.toLocaleString();
+            document.getElementById('metrics-explain').innerText = `Total Leads: ${totalLeads} | Closed Clients: ${closedClients} | ROAS: ${roas}x`;
+        }
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const spend = document.getElementById('v-spend').innerText;
+            const rev = document.getElementById('v-rev').innerText;
+            const leads = document.getElementById('v-cpl').innerText;
+            let msg = "السلام عليكم!\n\n*LinkedIn Ads Calculator Inquiry:*\n- Budget: " + spend + "\n- Est. Revenue: " + rev;
+            window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank');
+        }
+        calcRoi();
+    </script>
+</body>
+</html>
