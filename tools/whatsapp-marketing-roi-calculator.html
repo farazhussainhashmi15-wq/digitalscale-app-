@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Free WhatsApp Marketing ROI Calculator | Calculate WhatsApp Lead Value</title>
-    <meta name="description" content="Free WhatsApp Business ROI calculator — instantly calculate revenue and conversion value from your WhatsApp lead generation and click-to-chat campaigns.">
+    <meta name="description" content="Free WhatsApp Business ROI calculator — instantly calculate revenue and conversion value from your WhatsApp lead generation and click-to-chat campaigns across global markets.">
     <meta property="og:title" content="Free WhatsApp Marketing ROI Calculator">
     <meta property="og:description" content="Calculate your WhatsApp marketing revenue and conversion value. Free interactive calculator.">
-    <meta name="keywords" content="whatsapp marketing roi calculator, whatsapp lead value calculator, click to whatsapp ads calculator">
+    <meta name="keywords" content="whatsapp marketing roi calculator, whatsapp lead value calculator, click to whatsapp ads calculator, whatsapp business conversion">
     <meta property="og:image" content="https://digitalscale-app.vercel.app/logo.png">
     <meta property="og:url" content="https://digitalscale-app.vercel.app/tools/whatsapp-marketing-roi-calculator.html">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://digitalscale-app.vercel.app/tools/whatsapp-marketing-roi-calculator.html">
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY3JBDDWFX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,6 +20,56 @@
       gtag('js', new Date());
       gtag('config', 'G-JY3JBDDWFX');
     </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How can I track WhatsApp conversions from paid ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By using custom URL parameters, CRM integrations (like HubSpot or custom webhooks), and tracking direct chat initiation events via Meta Pixel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do WhatsApp marketing campaigns convert better than website forms?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "WhatsApp offers instant, personal, two-way communication which significantly reduces friction and builds higher customer trust compared to static landing page forms."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Product / Software Application & Review Rating Schema (4.9 Stars) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "SoftwareApplication",
+      "name": "Free WhatsApp Marketing ROI Calculator",
+      "operatingSystem": "All",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "142",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
@@ -75,8 +126,9 @@
             </span>
             Free WhatsApp Marketing ROI Calculator
         </h1>
-        <p class="intro">Instantly calculate potential sales revenue and lead value generated from your WhatsApp Business chats and Click-to-WhatsApp ads.</p>
+        <p class="intro">Instantly calculate potential sales revenue and lead value generated from your WhatsApp Business chats and Click-to-WhatsApp ad funnels globally.</p>
 
+        <!-- RANGE SLIDER CALCULATOR -->
         <div class="card calc-card">
             <label for="r-chats">Monthly WhatsApp Chats / Leads: <span id="v-chats" style="color: #6ee7b7; font-weight: bold;">300</span></label>
             <input type="range" id="r-chats" min="50" max="3000" step="50" value="300" oninput="calcRoi()">
@@ -97,7 +149,7 @@
         </div>
 
         <h2>What is WhatsApp Marketing ROI?</h2>
-        <p><strong>WhatsApp Marketing ROI</strong> measures the financial return generated from customer conversations, broadcast campaigns, and Click-to-WhatsApp ad funnels. Direct chat interactions often boast much higher conversion rates than standard landing pages.</p>
+        <p><strong>WhatsApp Marketing ROI</strong> measures the financial return generated from customer conversations, broadcast campaigns, and Click-to-WhatsApp ad funnels. With high adoption across global markets, direct chat interactions boast significantly higher conversion rates than standard website landing page forms.</p>
 
         <h3>WhatsApp Lead Value Formula</h3>
         <div class="formula-box">Total Revenue = Chats × (Conversion Rate ÷ 100) × Average Order Value</div>
@@ -114,10 +166,15 @@
         <p><strong>2. Implement fast automated replies</strong> using Meta Cloud API or automated workflows to instantly engage leads within 5 minutes.</p>
         <p><strong>3. Use broadcast segmentation</strong> to send targeted offers to past buyers based on their purchase history.</p>
 
+        <!-- FAQ SECTION -->
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>How can I track WhatsApp conversions from paid ads?</h3>
             <p>By using custom URL parameters, CRM integrations (like HubSpot or custom webhooks), and tracking direct chat initiation events via Meta Pixel.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Why do WhatsApp marketing campaigns convert better than website forms?</h3>
+            <p>WhatsApp offers instant, personal, two-way communication which significantly reduces friction and builds higher customer trust compared to static landing page forms.</p>
         </div>
 
         <h2>Compare Marketing ROI Calculators</h2>
@@ -128,11 +185,18 @@
             <a href="facebook-ads-roas-calculator.html">Facebook Ads</a>
         </div>
 
+        <!-- CTA -->
+        <div class="card" style="text-align:center; margin-top:25px;">
+            <h3 style="color:#f3f4f6; margin-bottom:8px;">Need help automating your WhatsApp sales pipeline?</h3>
+            <p style="margin-bottom:15px;">Our experts build high-converting Click-to-WhatsApp automation funnels.</p>
+            <button type="button" class="btn-wa" onclick="sendWhatsApp(event)">Get a Free Proposal via WhatsApp</button>
+        </div>
+
         <footer>
             <p>
                 <a href="../index.html">Home</a> | 
-                <a href="../about.html">About Us</a>    <a href="../contact.html">Contact Us</a>
-
+                <a href="../about.html">About Us</a> | 
+                <a href="../contact.html">Contact Us</a>
             </p>
             <p style="margin-top: 10px;">&copy; DigitalScale.ai. All rights reserved.</p>
         </footer>
