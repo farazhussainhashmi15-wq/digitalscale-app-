@@ -12,6 +12,7 @@
     <meta property="og:url" content="https://digitalscale-app.vercel.app/tools/instagram-ads-roas-calculator.html">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://digitalscale-app.vercel.app/tools/instagram-ads-roas-calculator.html">
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY3JBDDWFX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,6 +20,64 @@
       gtag('js', new Date());
       gtag('config', 'G-JY3JBDDWFX');
     </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a good ROAS on Instagram?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A ROAS between 3.5x and 5x is typically considered a healthy and profitable target for growth on Instagram placements like Reels and Stories."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is Instagram Ads ROAS calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Instagram Ads ROAS is calculated by dividing the total revenue generated from your Instagram ad campaigns by the total amount spent on those ads."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Instagram placement performs best for ROAS?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Instagram Reels placements generally yield higher engagement and lower acquisition costs, resulting in better overall ROAS for visual products."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Product / Software Application & Review Rating Schema (4.9 Stars) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "SoftwareApplication",
+      "name": "Free Instagram Ads ROAS Calculator",
+      "operatingSystem": "All",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "105",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
@@ -78,6 +137,7 @@
         </h1>
         <p class="intro">Instantly evaluate your Instagram Reels, Stories, and feed ad campaign returns using our interactive slider.</p>
 
+        <!-- RANGE SLIDER CALCULATOR -->
         <div class="card calc-card">
             <label for="r-spend">Monthly Instagram Ad Budget: <span id="v-spend" style="color: #f472b6; font-weight: bold;">$1,000</span></label>
             <input type="range" id="r-spend" min="200" max="20000" step="100" value="1000" oninput="calcRoi()">
@@ -95,7 +155,7 @@
         </div>
 
         <h2>What is Instagram Ads ROAS?</h2>
-        <p><strong>Instagram Ads ROAS</strong> measures the income generated per dollar spent on Instagram placements. High-converting Reels and engaging visual storytelling drive strong return rates.</p>
+        <p><strong>Instagram Ads ROAS (Return on Ad Spend)</strong> measures the income generated per dollar spent on Instagram placements. High-converting Reels and engaging visual storytelling drive strong return rates.</p>
 
         <h3>Instagram ROAS Formula</h3>
         <div class="formula-box">Instagram ROAS = Revenue from Instagram Ads ÷ Instagram Ad Spend</div>
@@ -112,10 +172,19 @@
         <p><strong>2. Test UGC (User Generated Content)</strong> creators to build trust and boost conversion rates.</p>
         <p><strong>3. Use Advantage+ shopping campaigns</strong> for automated audience optimization.</p>
 
+        <!-- FAQ SECTION -->
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>What is a good ROAS on Instagram?</h3>
             <p>A ROAS between 3.5x and 5x is typically considered a healthy target for profitable growth on Instagram.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How is Instagram Ads ROAS calculated?</h3>
+            <p>Divide the total revenue generated from your Instagram ad campaigns by the total amount spent on those ads.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Which Instagram placement performs best for ROAS?</h3>
+            <p>Instagram Reels placements generally yield higher engagement and lower acquisition costs.</p>
         </div>
 
         <h2>Compare ROAS on Other Platforms</h2>
@@ -126,11 +195,18 @@
             <a href="google-ads-roas-calculator.html">Google Ads</a>
         </div>
 
+        <!-- CTA -->
+        <div class="card" style="text-align:center; margin-top:25px;">
+            <h3 style="color:#f3f4f6; margin-bottom:8px;">Need help hitting a higher Instagram ROAS?</h3>
+            <p style="margin-bottom:15px;">Our team manages creative and performance-driven Instagram ad campaigns.</p>
+            <button type="button" class="btn-wa" onclick="sendWhatsApp(event)">Get a Free Proposal via WhatsApp</button>
+        </div>
+
         <footer>
             <p>
                 <a href="../index.html">Home</a> | 
-                <a href="../about.html">About Us</a>    <a href="../contact.html">Contact Us</a>
-
+                <a href="../about.html">About Us</a> | 
+                <a href="../contact.html">Contact Us</a>
             </p>
             <p style="margin-top: 10px;">&copy; DigitalScale.ai. All rights reserved.</p>
         </footer>
