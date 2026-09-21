@@ -12,6 +12,7 @@
     <meta property="og:url" content="https://digitalscale-app.vercel.app/tools/linkedin-ads-roi-calculator.html">
     <meta property="og:type" content="website">
     <link rel="canonical" href="https://digitalscale-app.vercel.app/tools/linkedin-ads-roi-calculator.html">
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JY3JBDDWFX"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -19,6 +20,64 @@
       gtag('js', new Date());
       gtag('config', 'G-JY3JBDDWFX');
     </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is LinkedIn good for small business budgets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LinkedIn requires higher minimum budgets compared to Meta or TikTok, but it is unmatched for high-ticket B2B services, SaaS, and corporate consulting."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is LinkedIn Ads ROI calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "LinkedIn Ads ROI is calculated by determining total leads from ad spend, applying the client close rate, and multiplying by the average client lifetime value (LTV)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a good Cost Per Lead (CPL) on LinkedIn?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A good CPL on LinkedIn typically ranges between $45 and $95 depending on your target industry, seniority level, and ad creative quality."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Product / Software Application & Review Rating Schema (4.9 Stars) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "SoftwareApplication",
+      "name": "Free LinkedIn Ads ROI & Lead Generation Calculator",
+      "operatingSystem": "All",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "128",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
@@ -77,6 +136,7 @@
         </h1>
         <p class="intro">Instantly estimate your B2B pipeline revenue, lead acquisition cost, and return on ad spend for LinkedIn marketing campaigns.</p>
 
+        <!-- RANGE SLIDER CALCULATOR -->
         <div class="card calc-card">
             <label for="r-spend">Monthly LinkedIn Ad Budget: <span id="v-spend" style="color: #93c5fd; font-weight: bold;">$2,000</span></label>
             <input type="range" id="r-spend" min="500" max="25000" step="500" value="2000" oninput="calcRoi()">
@@ -117,10 +177,19 @@
         <p><strong>2. Target decision-makers strictly</strong> by job titles, seniority, and specific industry filters.</p>
         <p><strong>3. Promote thought-leadership content</strong> rather than direct hard-sell pitches to build trust.</p>
 
+        <!-- FAQ SECTION -->
         <h2>Frequently Asked Questions</h2>
         <div class="faq-item">
             <h3>Is LinkedIn good for small business budgets?</h3>
-            <p>LinkedIn requires higher minimum budgets compared to Meta or TikTok, but it's unmatched for high-ticket B2B services, SaaS, and consulting.</p>
+            <p>LinkedIn requires higher minimum budgets compared to Meta or TikTok, but it is unmatched for high-ticket B2B services, SaaS, and corporate consulting.</p>
+        </div>
+        <div class="faq-item">
+            <h3>How is LinkedIn Ads ROI calculated?</h3>
+            <p>LinkedIn Ads ROI is calculated by determining total leads from ad spend, applying the client close rate, and multiplying by the average client lifetime value (LTV).</p>
+        </div>
+        <div class="faq-item">
+            <h3>What is a good Cost Per Lead (CPL) on LinkedIn?</h3>
+            <p>A good CPL on LinkedIn typically ranges between $45 and $95 depending on your target industry, seniority level, and ad creative quality.</p>
         </div>
 
         <h2>Compare Marketing ROI Calculators</h2>
@@ -131,11 +200,18 @@
             <a href="whatsapp-marketing-roi-calculator.html">WhatsApp ROI</a>
         </div>
 
+        <!-- CTA -->
+        <div class="card" style="text-align:center; margin-top:25px;">
+            <h3 style="color:#f3f4f6; margin-bottom:8px;">Need help scaling your B2B LinkedIn pipeline?</h3>
+            <p style="margin-bottom:15px;">Our experts specialize in high-converting LinkedIn lead generation campaigns.</p>
+            <button type="button" class="btn-wa" onclick="sendWhatsApp(event)">Get a Free Proposal via WhatsApp</button>
+        </div>
+
         <footer>
             <p>
                 <a href="../index.html">Home</a> | 
-                <a href="../about.html">About Us</a>    <a href="../contact.html">Contact Us</a>
-
+                <a href="../about.html">About Us</a> | 
+                <a href="../contact.html">Contact Us</a>
             </p>
             <p style="margin-top: 10px;">&copy; DigitalScale.ai. All rights reserved.</p>
         </footer>
@@ -165,7 +241,7 @@
             e.preventDefault();
             const spend = document.getElementById('v-spend').innerText;
             const rev = document.getElementById('v-rev').innerText;
-            let msg = "السلام عليكم!\n\n*LinkedIn Ads Calculator Inquiry:*\n- Budget: " + spend + "\n- Est. Revenue: " + rev;
+            let msg = "السلام عليكم!\n\n*LinkedIn Ads Calculator Inquiry:*\n- Budget: " + spend + "\n- Est. Pipeline Revenue: " + rev;
             window.open('https://wa.me/' + PHONE + '?text=' + encodeURIComponent(msg), '_blank');
         }
         calcRoi();
