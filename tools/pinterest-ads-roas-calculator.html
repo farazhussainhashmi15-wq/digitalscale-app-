@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pinterest Ads ROAS Calculator | DigitalScale.ai</title>
-    <meta name="description" content="Calculate your Return on Ad Spend (ROAS) and revenue for Pinterest advertising campaigns instantly with our free interactive tool.">
-    <meta property="og:title" content="Pinterest Ads ROAS Calculator | DigitalScale.ai">
-    <meta property="og:description" content="Free interactive ROAS and ROI calculator for Pinterest ad campaigns.">
+    <title>Free Pinterest Ads ROAS Calculator | DigitalScale.ai</title>
+    <meta name="description" content="Instantly calculate visual discovery and pin campaign returns, ad spend, and revenue for Pinterest marketing campaigns.">
+    <meta property="og:title" content="Free Pinterest Ads ROAS Calculator | DigitalScale.ai">
+    <meta property="og:description" content="Free interactive Pinterest ROAS and ROI calculator for e-commerce and visual discovery campaigns.">
     <meta property="og:image" content="https://digitalscale-app.vercel.app/logo.png">
     <meta property="og:url" content="https://digitalscale-app.vercel.app/tools/pinterest-ads-roas-calculator.html">
     <meta property="og:type" content="website">
@@ -22,35 +22,67 @@
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
         body { background-color: #030712; color: #f3f4f6; padding: 20px; line-height: 1.7; }
-        .container { max-width: 800px; margin: 0 auto; }
+        .container { max-width: 900px; margin: 0 auto; }
         
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid #1f2937; margin-bottom: 30px; }
-        .logo img { max-height: 45px; width: auto; object-fit: contain; display: block; }
-        .back-link { color: #9ca3af; text-decoration: none; font-size: 14px; transition: color 0.2s; }
-        .back-link:hover { color: #E60023; }
+        header { display: flex; justify-content: flex-start; align-items: center; padding: 20px 0; border-bottom: 1px solid #1f2937; margin-bottom: 30px; }
+        .logo img { max-height: 50px; width: auto; object-fit: contain; display: block; }
+        
+        .breadcrumb { font-size: 13px; color: #9ca3af; margin-bottom: 15px; }
+        .breadcrumb a { color: #10b981; text-decoration: none; }
+        
+        .hero { text-align: left; margin-bottom: 30px; }
+        .hero-flex { display: flex; align-items: center; gap: 16px; margin-bottom: 12px; }
+        .platform-icon { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .platform-icon svg { width: 100%; height: 100%; }
+        
+        h1 { font-size: clamp(24px, 3.5vw, 34px); font-weight: 800; color: #fff; letter-spacing: -0.5px; line-height: 1.3; }
+        .subtitle { color: #9ca3af; font-size: 15px; margin-top: 8px; max-width: 750px; }
+        
+        /* Calculator Card Box */
+        .calc-card { background: linear-gradient(135deg, #111827 0%, #0d1322 100%); border: 1px solid #1f2937; border-radius: 16px; padding: 25px; margin-bottom: 40px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); }
+        
+        .input-group { margin-bottom: 22px; }
+        .input-label { display: flex; justify-content: space-between; font-size: 14px; font-weight: 600; color: #d1d5db; margin-bottom: 8px; }
+        .input-label span:last-child { color: #10b981; font-family: monospace; font-size: 15px; }
+        
+        input[type="range"] { width: 100%; height: 6px; background: #374151; border-radius: 3px; outline: none; -webkit-appearance: none; }
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 18px; height: 18px; border-radius: 50%; background: #10b981; cursor: pointer; transition: transform 0.1s; }
+        input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+        
+        /* Output Results Box */
+        .result-box { background: #030712; border: 1px solid #1f2937; border-radius: 12px; padding: 20px; text-align: center; margin-top: 25px; }
+        .result-title { font-size: 13px; text-transform: uppercase; letter-spacing: 1px; color: #9ca3af; margin-bottom: 5px; }
+        .result-value { font-size: clamp(32px, 5vw, 42px); font-weight: 800; color: #10b981; margin-bottom: 10px; font-family: monospace; }
+        .result-subtext { font-size: 13px; color: #9ca3af; border-top: 1px solid #1f2937; padding-top: 10px; margin-top: 5px; }
+        
+        .cta-button { display: block; width: 100%; background: #10b981; color: #030712; font-weight: 700; text-align: center; padding: 14px; border-radius: 8px; text-decoration: none; margin-top: 20px; transition: background 0.2s; font-size: 15px; }
+        .cta-button:hover { background: #059669; }
 
-        .tool-header { display: flex; align-items: center; gap: 16px; margin-bottom: 25px; }
-        .tool-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 10px; }
-        .tool-icon svg { width: 100%; height: 100%; object-fit: contain; }
-        h1 { font-size: clamp(22px, 3vw, 30px); font-weight: 800; color: #fff; letter-spacing: -0.5px; }
-        .subtitle { color: #9ca3af; font-size: 14px; margin-bottom: 30px; }
+        /* Content Sections */
+        .content-section { margin-bottom: 35px; }
+        .content-section h2 { font-size: 20px; color: #fff; font-weight: 700; margin-bottom: 12px; margin-top: 25px; }
+        .content-section p { font-size: 14px; color: #9ca3af; margin-bottom: 12px; }
+        
+        .formula-box { background: #111827; border: 1px solid #1f2937; border-radius: 10px; padding: 15px; font-family: monospace; color: #10b981; text-align: center; font-size: 14px; margin: 15px 0; }
+        
+        /* Comparison Table */
+        .comparison-table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 14px; }
+        .comparison-table th, .comparison-table td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #1f2937; }
+        .comparison-table th { color: #fff; font-weight: 600; background: #111827; }
+        .comparison-table td { color: #9ca3af; }
+        
+        /* FAQ list */
+        .faq-item { margin-bottom: 18px; }
+        .faq-question { font-size: 15px; font-weight: 600; color: #10b981; margin-bottom: 5px; }
+        .faq-answer { font-size: 14px; color: #9ca3af; }
 
-        .calculator-card { background: #111827; border: 1px solid #1f2937; padding: 25px; border-radius: 16px; margin-bottom: 30px; }
-        .input-group { margin-bottom: 20px; }
-        .input-group label { display: block; font-size: 14px; font-weight: 600; color: #d1d5db; margin-bottom: 8px; }
-        .input-row { display: flex; align-items: center; gap: 12px; }
-        input[type="range"] { flex: 1; accent-color: #E60023; cursor: pointer; height: 6px; background: #374151; border-radius: 3px; }
-        input[type="number"] { width: 130px; background: #030712; border: 1px solid #374151; color: #fff; padding: 10px 14px; border-radius: 8px; font-size: 16px; font-weight: 600; text-align: right; }
-        input[type="number"]:focus { outline: none; border-color: #E60023; }
-
-        .results-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 25px; padding-top: 25px; border-top: 1px solid #1f2937; }
-        .result-box { background: #030712; border: 1px solid #1f2937; padding: 18px; border-radius: 12px; text-align: center; }
-        .result-label { font-size: 13px; color: #9ca3af; margin-bottom: 6px; }
-        .result-value { font-size: 24px; font-weight: 800; color: #E60023; }
-        .result-value.green { color: #10b981; }
+        /* Cross Platform Pills */
+        .platform-pills { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+        .pill { background: #111827; border: 1px solid #1f2937; color: #d1d5db; padding: 8px 14px; border-radius: 20px; font-size: 13px; text-decoration: none; transition: all 0.2s; }
+        .pill:hover, .pill.active { border-color: #10b981; color: #fff; background: #161e2e; }
 
         footer { text-align: center; color: #6b7280; font-size: 13px; margin-top: 40px; padding-top: 20px; border-top: 1px solid #1f2937; }
-        footer a { color: #E60023; text-decoration: none; }
+        footer a { color: #10b981; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -60,70 +92,115 @@
             <div class="logo">
                 <a href="/"><img src="../logo.png" alt="DigitalScale.ai" loading="eager"></a>
             </div>
-            <a href="/" class="back-link">&larr; Back to All Tools</a>
         </header>
 
-        <div class="tool-header">
-            <div class="tool-icon">
-                <!-- Pinterest SVG Icon -->
-                <svg viewBox="0 0 24 24" fill="#E60023"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.399.165-1.493-.695-2.425-2.875-2.425-4.625 0-3.767 2.739-7.229 7.9-7.229 4.144 0 7.365 2.953 7.365 6.906 0 4.122-2.604 7.44-6.216 7.44-1.213 0-2.354-.63-2.744-1.379l-.749 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+        <div class="breadcrumb">
+            <a href="/">Home</a> / Pinterest Ads ROAS Calculator
+        </div>
+
+        <div class="hero">
+            <div class="hero-flex">
+                <div class="platform-icon">
+                    <svg viewBox="0 0 24 24" fill="#E60023"><path d="M12 0C5.373 0 0 5.372 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.399.165-1.493-.695-2.425-2.875-2.425-4.625 0-3.767 2.739-7.229 7.9-7.229 4.144 0 7.365 2.953 7.365 6.906 0 4.122-2.604 7.44-6.216 7.44-1.213 0-2.354-.63-2.744-1.379l-.749 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/></svg>
+                </div>
+                <h1>Free Pinterest Ads ROAS Calculator</h1>
             </div>
-            <div>
-                <h1>Pinterest Ads ROAS Calculator</h1>
-                <p class="subtitle" style="margin-bottom: 0;">Calculate your Pinterest shopping and pin campaign returns instantly.</p>
+            <p class="subtitle">Instantly calculate pin campaign returns, visual discovery revenue, and return on ad spend for e-commerce and inspiration-led marketing funnels.</p>
+        </div>
+
+        <!-- Calculator Widget Card -->
+        <div class="calc-card">
+            <div class="input-group">
+                <div class="input-label">
+                    <span>Monthly Pinterest Ad Spend ($):</span>
+                    <span id="spendVal">$2,500</span>
+                </div>
+                <input type="range" id="adSpend" min="100" max="50000" step="100" value="2500" oninput="calculateROAS()">
+            </div>
+
+            <div class="input-group">
+                <div class="input-label">
+                    <span>Total Pin-Driven Revenue ($):</span>
+                    <span id="revenueVal">$12,500</span>
+                </div>
+                <input type="range" id="adRevenue" min="100" max="250000" step="500" value="12500" oninput="calculateROAS()">
+            </div>
+
+            <div class="result-box">
+                <div class="result-title">Calculated Pinterest ROAS</div>
+                <div class="result-value" id="roasResult">5.00x</div>
+                <div class="result-subtext" id="netProfitText">Net Profit from Ads: $10,000.00 | Profit Margin: 80.0%</div>
+            </div>
+
+            <a href="https://wa.me/?text=Hi,%20I%20want%20to%20scale%20my%20Pinterest%20Ads%20campaigns!" target="_blank" class="cta-button">Get Free Pinterest Strategy & Audit via WhatsApp</a>
+        </div>
+
+        <!-- SEO Content Section -->
+        <div class="content-section">
+            <h2>What is Pinterest Ads ROAS?</h2>
+            <p>Pinterest Ads ROAS (Return on Ad Spend) measures the amount of revenue your business earns for every dollar spent on Pinterest advertising campaigns. Because Pinterest functions as a visual discovery engine where users actively plan purchases, tracking ROAS helps optimize pin formats, shopping ads, and audience targeting.</p>
+            
+            <div class="formula-box">
+                Pinterest ROAS = Total Revenue Generated from Pins ÷ Total Pinterest Ad Spend
+            </div>
+
+            <h2>Why Pinterest Visual Discovery Converts Differently</h2>
+            <p>Unlike traditional interruptive social platforms, users come to Pinterest with high purchase intent during their planning phases. Promoted Pins and Shopping Ads integrate seamlessly into user boards, resulting in higher average order values and long-lasting traffic longevity.</p>
+
+            <table class="comparison-table">
+                <tr>
+                    <th>Marketing Platform</th>
+                    <th>Average Engagement & Intent</th>
+                </tr>
+                <tr>
+                    <td>Standard Social Feeds</td>
+                    <td>Passive scrolling, impulse interest</td>
+                </tr>
+                <tr>
+                    <td>Pinterest Visual Search</td>
+                    <td>Active planning, high buyer intent, prolonged pin lifespan</td>
+                </tr>
+            </table>
+
+            <h2>How to Scale Pinterest Shopping & Conversion Ads</h2>
+            <p><strong>1. Sync Product Catalog:</strong> Upload your full e-commerce catalog to Pinterest Merchant Verified so your pins become instantly shoppable.</p>
+            <p><strong>2. Leverage Idea Pins & Video:</strong> Combine storytelling and rich visual media to capture attention during early inspiration stages.</p>
+            <p><strong>3. Retarget Website Visitors:</strong> Install the Pinterest Tag to retarget users who visited your site with tailored product collection ads.</p>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="content-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What is a good ROAS for Pinterest Ads?</div>
+                <div class="faq-answer">A ROAS of 4x to 6x (or higher) is generally considered healthy for Pinterest e-commerce campaigns, given the platform's high-intent planning audience.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How long do Pinterest ads continue driving traffic?</div>
+                <div class="faq-answer">Unlike typical social posts that disappear in hours, Pins have an exceptionally long shelf-life and can drive organic and paid discovery for months or even years.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How do I track conversions accurately on Pinterest?</div>
+                <div class="faq-answer">Install the Pinterest Tag on your checkout pages and configure enhanced match parameters along with conversion events.</div>
             </div>
         </div>
 
-        <div class="calculator-card">
-            <!-- Ad Spend -->
-            <div class="input-group">
-                <label for="adSpend">Total Ad Spend ($)</label>
-                <div class="input-row">
-                    <input type="range" id="spendRange" min="50" max="10000" step="50" value="1000">
-                    <input type="number" id="adSpend" value="1000" min="0">
-                </div>
-            </div>
-
-            <!-- Average Order Value -->
-            <div class="input-group">
-                <label for="aov">Average Order Value - AOV ($)</label>
-                <div class="input-row">
-                    <input type="range" id="aovRange" min="10" max="500" step="5" value="75">
-                    <input type="number" id="aov" value="75" min="0">
-                </div>
-            </div>
-
-            <!-- Conversion Rate -->
-            <div class="input-group">
-                <label for="conversionRate">Estimated Conversion Rate (%)</label>
-                <div class="input-row">
-                    <input type="range" id="crRange" min="0.1" max="10" step="0.1" value="2.0">
-                    <input type="number" id="conversionRate" value="2.0" min="0" step="0.1">
-                </div>
-            </div>
-
-            <!-- Clicks / Traffic -->
-            <div class="input-group">
-                <label for="clicks">Total Ad Clicks / Outbound Traffic</label>
-                <div class="input-row">
-                    <input type="range" id="clicksRange" min="100" max="20000" step="100" value="2500">
-                    <input type="number" id="clicks" value="2500" min="0">
-                </div>
-            </div>
-
-            <div class="results-grid">
-                <div class="result-box">
-                    <div class="result-label">Total Conversions</div>
-                    <div class="result-value green" id="resConversions">50</div>
-                </div>
-                <div class="result-box">
-                    <div class="result-label">Total Revenue</div>
-                    <div class="result-value green" id="resRevenue">$3,750</div>
-                </div>
-                <div class="result-box">
-                    <div class="result-label">Return on Ad Spend (ROAS)</div>
-                    <div class="result-value" id="resRoas">3.75x</div>
-                </div>
+        <!-- Compare Calculators Navigation -->
+        <div class="content-section">
+            <h2>Compare Marketing ROI Calculators</h2>
+            <div class="platform-pills">
+                <a href="../index.html" class="pill">All Platforms (Home)</a>
+                <a href="facebook-ads-roas-calculator.html" class="pill">Facebook Ads</a>
+                <a href="instagram-ads-roas-calculator.html" class="pill">Instagram Ads</a>
+                <a href="tiktok-ads-roas-calculator.html" class="pill">TikTok Ads</a>
+                <a href="snapchat-ads-roas-calculator.html" class="pill">Snapchat Ads</a>
+                <a href="google-ads-roas-calculator.html" class="pill">Google Ads</a>
+                <a href="linkedin-ads-roi-calculator.html" class="pill">LinkedIn Ads</a>
+                <a href="whatsapp-marketing-roi-calculator.html" class="pill">WhatsApp Marketing</a>
+                <a href="pinterest-ads-roas-calculator.html" class="pill active">Pinterest Ads</a>
             </div>
         </div>
 
@@ -133,52 +210,21 @@
     </div>
 
     <script>
-        const spendRange = document.getElementById('spendRange');
-        const adSpend = document.getElementById('adSpend');
-        const aovRange = document.getElementById('aovRange');
-        const aov = document.getElementById('aov');
-        const crRange = document.getElementById('crRange');
-        const conversionRate = document.getElementById('conversionRate');
-        const clicksRange = document.getElementById('clicksRange');
-        const clicks = document.getElementById('clicks');
+        function calculateROAS() {
+            const spend = parseFloat(document.getElementById('adSpend').value);
+            const revenue = parseFloat(document.getElementById('adRevenue').value);
 
-        const resConversions = document.getElementById('resConversions');
-        const resRevenue = document.getElementById('resRevenue');
-        const resRoas = document.getElementById('resRoas');
+            document.getElementById('spendVal').innerText = '$' + spend.toLocaleString();
+            document.getElementById('revenueVal').innerText = '$' + revenue.toLocaleString();
 
-        function calculate() {
-            const spend = parseFloat(adSpend.value) || 0;
-            const orderValue = parseFloat(aov.value) || 0;
-            const cr = parseFloat(conversionRate.value) || 0;
-            const totalClicks = parseFloat(clicks.value) || 0;
+            let roas = spend > 0 ? (revenue / spend).toFixed(2) : 0;
+            let netProfit = revenue - spend;
+            let profitMargin = revenue > 0 ? ((netProfit / revenue) * 100).toFixed(1) : 0;
 
-            const conversions = Math.round(totalClicks * (cr / 100));
-            const revenue = conversions * orderValue;
-            const roas = spend > 0 ? (revenue / spend) : 0;
-
-            resConversions.textContent = conversions.toLocaleString();
-            resRevenue.textContent = '$' + revenue.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
-            resRoas.textContent = roas.toFixed(2) + 'x';
+            document.getElementById('roasResult').innerText = roas + 'x';
+            document.getElementById('netProfitText').innerText = `Net Profit from Ads: $${netProfit.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})} | Profit Margin: ${profitMargin}%`;
         }
-
-        function sync(range, num) {
-            range.value = num.value;
-            calculate();
-        }
-
-        spendRange.addEventListener('input', () => { adSpend.value = spendRange.value; calculate(); });
-        adSpend.addEventListener('input', () => { sync(spendRange, adSpend); });
-
-        aovRange.addEventListener('input', () => { aov.value = aovRange.value; calculate(); });
-        aov.addEventListener('input', () => { sync(aovRange, aov); });
-
-        crRange.addEventListener('input', () => { conversionRate.value = crRange.value; calculate(); });
-        conversionRate.addEventListener('input', () => { sync(crRange, conversionRate); });
-
-        clicksRange.addEventListener('input', () => { clicks.value = clicksRange.value; calculate(); });
-        clicks.addEventListener('input', () => { sync(clicksRange, clicks); });
-
-        calculate();
+        calculateROAS();
     </script>
 </body>
 </html>
